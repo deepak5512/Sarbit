@@ -1,7 +1,12 @@
+import ContactSection from "@/components/contact";
 import React from "react";
 
 const page = () => {
-  return <div>page</div>;
+  return (
+    <>
+      <ContactSection />
+    </>
+  );
 };
 
 export default page;

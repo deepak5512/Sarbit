@@ -10,7 +10,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Sarbit",
+  title: "Sarbit Innovations",
   description:
     "A deep Tech Start up from Medical Technologies Program by IIT Jodhpur & AIIMS Jodhpur",
 };
