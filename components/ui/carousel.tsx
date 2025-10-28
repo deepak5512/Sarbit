@@ -65,7 +65,7 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
   const { src, title } = slide;
 
   return (
-    <div className="[perspective:1200px] [transform-style:preserve-3d]">
+    <div className="[perspective-distant] [transform-3d]">
       <li
         ref={slideRef}
         className="relative z-10 mx-[4vmin] flex h-[70vmin] w-[70vmin] flex-1 flex-col items-center justify-center text-center text-white opacity-100 transition-all duration-300 ease-in-out"
@@ -90,6 +90,7 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
                 : "none",
           }}
         >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             className="absolute inset-0 h-[120%] w-[120%] object-cover opacity-100 transition-opacity duration-600 ease-in-out"
             style={{
