@@ -29,7 +29,7 @@ export default function RootLayout({
         <div className="mx-auto max-w-5xl px-6">
           <FooterSection
             logo={<Hexagon className="h-10 w-10" />}
-            brandName="Awesome Corp"
+            brandName="Sarbit Innovations"
             socialLinks={[
               {
                 icon: <Twitter className="h-5 w-5" />,
