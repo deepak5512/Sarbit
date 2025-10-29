@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { HeroHeader } from "@/components/header";
 import FooterSection from "@/components/footer";
+import { Github, Hexagon, Twitter } from "lucide-react";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -25,7 +26,34 @@ export default function RootLayout({
       <body className={`${inter.className} antialiased`}>
         <HeroHeader />
         {children}
-        <FooterSection />
+        <div className="mx-auto max-w-5xl px-6">
+          <FooterSection
+            logo={<Hexagon className="h-10 w-10" />}
+            brandName="Awesome Corp"
+            socialLinks={[
+              {
+                icon: <Twitter className="h-5 w-5" />,
+                href: "https://twitter.com",
+                label: "Twitter",
+              },
+              {
+                icon: <Github className="h-5 w-5" />,
+                href: "https://github.com",
+                label: "GitHub",
+              },
+            ]}
+            mainLinks={[
+              { href: "/products", label: "Products" },
+              { href: "/about", label: "About" },
+              { href: "/contact", label: "Contact" },
+            ]}
+            legalLinks={[{ href: "/terms", label: "Terms" }]}
+            copyright={{
+              text: "© 2025 Sarbit Innovations",
+              license: "All rights reserved",
+            }}
+          />
+        </div>
       </body>
     </html>
   );
