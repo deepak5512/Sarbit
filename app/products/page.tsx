@@ -1,10 +1,10 @@
-import Features from "@/components/features-12";
+import Products from "@/components/products";
 import React from "react";
 
 const page = () => {
   return (
     <>
-      <Features />
+      <Products />
     </>
   );
 };

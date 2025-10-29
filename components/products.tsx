@@ -16,7 +16,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { BorderBeam } from "@/components/ui/border-beam";
 
-export default function Features() {
+export default function Products() {
   type ImageKey = "item-1" | "item-2" | "item-3" | "item-4";
   const [activeItem, setActiveItem] = useState<ImageKey>("item-1");
 

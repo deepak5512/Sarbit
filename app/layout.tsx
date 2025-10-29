@@ -3,7 +3,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { HeroHeader } from "@/components/header";
 import FooterSection from "@/components/footer";
-import { Github, Hexagon, Twitter } from "lucide-react";
+import { Github, Twitter } from "lucide-react";
+import { LogoIcon } from "@/components/logo";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -28,7 +29,7 @@ export default function RootLayout({
         {children}
         <div className="mx-auto max-w-5xl px-6">
           <FooterSection
-            logo={<Hexagon className="h-10 w-10" />}
+            logo={<LogoIcon />}
             brandName="Sarbit Innovations"
             socialLinks={[
               {
@@ -47,7 +48,7 @@ export default function RootLayout({
               { href: "/about", label: "About" },
               { href: "/contact", label: "Contact" },
             ]}
-            legalLinks={[{ href: "/terms", label: "Terms" }]}
+            legalLinks={[{ href: "/terms", label: "Terms & Conditions" }]}
             copyright={{
               text: "© 2025 Sarbit Innovations",
               license: "All rights reserved",
