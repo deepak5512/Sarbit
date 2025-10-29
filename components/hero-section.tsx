@@ -21,7 +21,7 @@ export default function HeroSection() {
           bounce: 0.3,
           duration: 1.5,
         },
-      },
+      } as const,
     },
   };
 
