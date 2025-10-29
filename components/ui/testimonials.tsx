@@ -27,7 +27,7 @@ export function Testimonials({
   testimonials,
   className,
   title = "Read what people are saying",
-  description = "Dummy feedback from virtual customers using our component library.",
+  description = "Trusted and appreciated by people worldwide.",
   maxDisplayed = 6,
 }: TestimonialsProps) {
   const [showAll, setShowAll] = useState(false);
