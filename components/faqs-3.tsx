@@ -20,38 +20,38 @@ export default function FAQsThree() {
   const faqItems: FAQItem[] = [
     {
       id: "item-1",
-      icon: "clock",
-      question: "What are your business hours?",
+      icon: "cpu", // Changed icon
+      question: "What does Sarbit Innovations specialize in?", // Changed question
       answer:
-        "Our customer service team is available Monday through Friday from 9:00 AM to 8:00 PM EST, and weekends from 10:00 AM to 6:00 PM EST. During holidays, hours may vary and will be posted on our website.",
+        "Sarbit Innovations is dedicated to pioneering advancements in nanosensor technology for early disease diagnosis and monitoring food adulteration.", // Changed answer
     },
     {
       id: "item-2",
-      icon: "credit-card",
-      question: "How do subscription payments work?",
+      icon: "target", // Changed icon
+      question: "What is the mission of Sarbit Innovations?", // Changed question
       answer:
-        "Subscription payments are automatically charged to your default payment method on the same day each month or year, depending on your billing cycle. You can update your payment information and view billing history in your account dashboard.",
+        "Their mission is to transform health and safety through sensor innovation, focusing on advancing sensor technologies for early disease diagnosis and monitoring food adulteration to ensure a healthier, safer world.", // Changed answer
     },
     {
       id: "item-3",
-      icon: "truck",
-      question: "Can I expedite my shipping?",
+      icon: "box", // Changed icon
+      question: "What products and services does Sarbit Innovations offer?", // Changed question
       answer:
-        "Yes, we offer several expedited shipping options at checkout. Next-day and 2-day shipping are available for most U.S. addresses if orders are placed before 2:00 PM EST. International expedited shipping options vary by destination.",
+        "Sarbit Innovations specializes in advanced products and services, including nano and biosensors for early disease detection, SERS substrates, thin film coatings, customized micropatterning solutions, wafer dicing, and wire bonding.", // Changed answer
     },
     {
       id: "item-4",
-      icon: "globe",
-      question: "Do you offer localized support?",
+      icon: "award", // Changed icon
+      question: "What is the origin of Sarbit Innovations?", // Changed question
       answer:
-        "We offer multilingual support in English, Spanish, French, German, and Japanese. Our support team can assist customers in these languages via email, chat, and phone during standard business hours for each respective region.",
+        "Sarbit Innovations is a Deep Tech startup from the Medical Technologies Program by IIT Jodhpur & AIIMS Jodhpur.", // Changed answer
     },
     {
       id: "item-5",
-      icon: "package",
-      question: "How do I track my order?",
+      icon: "map-pin", // Changed icon
+      question: "Where is Sarbit Innovations located?", // Changed question
       answer:
-        "Once your order ships, you'll receive a confirmation email with a tracking number. You can use this number on our website or the carrier's website to track your package. You can also view order status and tracking information in your account dashboard under \"Order History\".",
+        "Sarbit Innovations Pvt. Ltd. is located at TISC, IIT Jodhpur, Karwar, Jodhpur, Rajasthan, 342037.", // Changed answer
     },
   ];
 
@@ -67,7 +67,7 @@ export default function FAQsThree() {
               <p className="text-muted-foreground mt-4">
                 Can&#39;t find what you&#39;re looking for? Contact our{" "}
                 <Link
-                  href="#"
+                  href="/contact"
                   className="text-primary font-medium hover:underline"
                 >
                   customer support team

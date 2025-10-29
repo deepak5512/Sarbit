@@ -103,7 +103,7 @@ export function Testimonials({
         {testimonials.length > maxDisplayed && !showAll && (
           <>
             <div className="from-background absolute bottom-0 left-0 h-20 w-full bg-linear-to-t to-transparent" />
-            <div className="absolute bottom-10 left-1/2 z-20 -translate-x-1/2 transform">
+            <div className="absolute bottom-10 left-1/2 z-10 -translate-x-1/2 transform">
               <Button variant="secondary" onClick={() => setShowAll(true)}>
                 Load More
               </Button>
