@@ -22,20 +22,20 @@ export default function Features() {
 
   const images = {
     "item-1": {
-      image: "/charts.png",
-      alt: "Database visualization",
+      image: "/products/medical.png",
+      alt: "Medical Diagnostic Sensors & Systems",
     },
     "item-2": {
-      image: "/music.png",
-      alt: "Security authentication",
+      image: "/products/micro.jpg",
+      alt: "Micro/Nano Patterned Devices",
     },
     "item-3": {
-      image: "/mail2.png",
-      alt: "Identity management",
+      image: "/products/metal.jpg",
+      alt: "Metals & Dielectric Coatings",
     },
     "item-4": {
-      image: "/payments.png",
-      alt: "Analytics dashboard",
+      image: "/products/wafer.png",
+      alt: "Wafer Dicing Services",
     },
   };
 
@@ -65,52 +65,48 @@ export default function Features() {
               <AccordionTrigger>
                 <div className="flex items-center gap-2 text-base">
                   <Database className="size-4" />
-                  Database Visualization
+                  Medical Diagnostic Sensors & Systems
                 </div>
               </AccordionTrigger>
               <AccordionContent>
-                Lyra is evolving to be more than just the models. It supports an
-                entire to the APIs and platforms helping developers and
-                businesses innovate.
+                Nano Sensors & Systems for early diagnosis of various diseases.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-2">
               <AccordionTrigger>
                 <div className="flex items-center gap-2 text-base">
                   <Fingerprint className="size-4" />
-                  Advanced Authentication
+                  Micro/Nano Patterned Devices
                 </div>
               </AccordionTrigger>
               <AccordionContent>
-                Lyra is evolving to be more than just the models. It supports an
-                entire to the APIs and platforms helping developers and
-                businesses innovate.
+                Utilizing photolithography, wet-etching, and lift-off methods to
+                generate electrodes, sensors, and biosensors from patterned
+                metal films.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-3">
               <AccordionTrigger>
                 <div className="flex items-center gap-2 text-base">
                   <IdCard className="size-4" />
-                  Identity Management
+                  Metals & Dielectric Coatings
                 </div>
               </AccordionTrigger>
               <AccordionContent>
-                Lyra is evolving to be more than just the models. It supports an
-                entire to the APIs and platforms helping developers and
-                businesses innovate.
+                Discover our proficiency in RF & DC Sputtering, e-beam and
+                thermal evaporation of various metals & dielectrics.
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-4">
               <AccordionTrigger>
                 <div className="flex items-center gap-2 text-base">
                   <ChartBarIncreasingIcon className="size-4" />
-                  Analytics Dashboard
+                  Wafer Dicing Services
                 </div>
               </AccordionTrigger>
               <AccordionContent>
-                Lyra is evolving to be more than just the models. It supports an
-                entire to the APIs and platforms helping developers and
-                businesses innovate.
+                Explore our expertise in the cutting and singulation of various
+                materials, including glass and silicon wafers.
               </AccordionContent>
             </AccordionItem>
           </Accordion>

@@ -1,4 +1,5 @@
 "use client";
+
 import Link from "next/link";
 import { Logo } from "@/components/logo";
 import { Menu, X } from "lucide-react";
@@ -7,12 +8,13 @@ import React from "react";
 const menuItems = [
   { name: "Home", href: "/" },
   { name: "About Us", href: "/about" },
-  { name: "Contact Us", href: "/contact" },
   { name: "Our Products", href: "/products" },
+  { name: "Contact Us", href: "/contact" },
 ];
 
 export const HeroHeader = () => {
   const [menuState, setMenuState] = React.useState(false);
+
   return (
     <header>
       <nav
