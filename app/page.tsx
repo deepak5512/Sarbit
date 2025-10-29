@@ -1,7 +1,6 @@
 import Collaborators from "@/components/collaborators";
 import FAQsThree from "@/components/faqs-3";
 import Features from "@/components/features-12";
-import { Gallery } from "@/components/gallery";
 import HeroSection from "@/components/hero-section";
 import { TestimonialsDemo } from "@/components/testimonials";
 
@@ -11,7 +10,6 @@ export default function Home() {
       <HeroSection />
       <Features />
       <FAQsThree />
-      <Gallery />
       <TestimonialsDemo />
       <Collaborators />
     </>

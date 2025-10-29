@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { InfiniteSlider } from "./ui/infinite-slider";
 import { ProgressiveBlur } from "./ui/progressive-blur";
 
@@ -7,88 +8,132 @@ const Collaborators = () => {
       <div className="group relative m-auto max-w-6xl px-6">
         <div className="flex flex-col items-center md:flex-row">
           <div className="md:max-w-44 md:border-r md:pr-6">
-            <p className="text-end text-sm">Powering the best teams</p>
+            <p className="text-end text-sm">Powering with best collaborators</p>
           </div>
+
           <div className="relative py-6 md:w-[calc(100%-11rem)]">
-            <InfiniteSlider speedOnHover={20} speed={40} gap={112}>
-              <div className="flex">
-                <img
-                  className="mx-auto h-5 w-fit dark:invert"
-                  src="https://html.tailus.io/blocks/customers/nvidia.svg"
-                  alt="Nvidia Logo"
-                  height="20"
-                  width="auto"
+            <InfiniteSlider speedOnHover={20} speed={60} gap={100}>
+              {/* AIIMS */}
+              <a
+                href="https://www.aiims.edu/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex"
+              >
+                <Image
+                  src="/collaborators/aiims.png"
+                  alt="AIIMS Logo"
+                  height={40}
+                  width={60}
+                  className="mx-auto dark:invert"
+                  priority
                 />
-              </div>
+              </a>
 
-              <div className="flex">
-                <img
-                  className="mx-auto h-4 w-fit dark:invert"
-                  src="https://html.tailus.io/blocks/customers/column.svg"
-                  alt="Column Logo"
-                  height="16"
-                  width="auto"
+              {/* BIRAC */}
+              <a
+                href="https://www.birac.nic.in/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex"
+              >
+                <Image
+                  src="/collaborators/birac.png"
+                  alt="BIRAC Logo"
+                  height={36}
+                  width={80}
+                  className="mx-auto dark:invert"
+                  priority
                 />
-              </div>
-              <div className="flex">
-                <img
-                  className="mx-auto h-4 w-fit dark:invert"
-                  src="https://html.tailus.io/blocks/customers/github.svg"
-                  alt="GitHub Logo"
-                  height="16"
-                  width="auto"
-                />
-              </div>
-              <div className="flex">
-                <img
-                  className="mx-auto h-5 w-fit dark:invert"
-                  src="https://html.tailus.io/blocks/customers/nike.svg"
-                  alt="Nike Logo"
-                  height="20"
-                  width="auto"
-                />
-              </div>
-              <div className="flex">
-                <img
-                  className="mx-auto h-5 w-fit dark:invert"
-                  src="https://html.tailus.io/blocks/customers/lemonsqueezy.svg"
-                  alt="Lemon Squeezy Logo"
-                  height="20"
-                  width="auto"
-                />
-              </div>
-              <div className="flex">
-                <img
-                  className="mx-auto h-4 w-fit dark:invert"
-                  src="https://html.tailus.io/blocks/customers/laravel.svg"
-                  alt="Laravel Logo"
-                  height="16"
-                  width="auto"
-                />
-              </div>
-              <div className="flex">
-                <img
-                  className="mx-auto h-7 w-fit dark:invert"
-                  src="https://html.tailus.io/blocks/customers/lilly.svg"
-                  alt="Lilly Logo"
-                  height="28"
-                  width="auto"
-                />
-              </div>
+              </a>
 
-              <div className="flex">
-                <img
-                  className="mx-auto h-6 w-fit dark:invert"
-                  src="https://html.tailus.io/blocks/customers/openai.svg"
-                  alt="OpenAI Logo"
-                  height="24"
-                  width="auto"
+              {/* IIT Jodhpur */}
+              <a
+                href="https://www.iitj.ac.in/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex"
+              >
+                <Image
+                  src="/collaborators/iitj.png"
+                  alt="IIT Jodhpur Logo"
+                  height={36}
+                  width={80}
+                  className="mx-auto dark:invert"
+                  priority
                 />
-              </div>
+              </a>
+
+              {/* JCKIF */}
+              <a
+                href="https://jckif.iitj.ac.in/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex"
+              >
+                <Image
+                  src="/collaborators/jckif.png"
+                  alt="JCKIF Logo"
+                  height={40}
+                  width={80}
+                  className="mx-auto dark:invert"
+                  priority
+                />
+              </a>
+
+              {/* MedTech */}
+              <a
+                href="https://medtech.iitj.ac.in/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex"
+              >
+                <Image
+                  src="/collaborators/medtech.png"
+                  alt="MedTech Logo"
+                  height={40}
+                  width={100}
+                  className="mx-auto dark:invert"
+                  priority
+                />
+              </a>
+
+              {/* SINE */}
+              <a
+                href="https://sineiitb.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex"
+              >
+                <Image
+                  src="/collaborators/sine.png"
+                  alt="Sine Logo"
+                  height={36}
+                  width={80}
+                  className="mx-auto dark:invert"
+                  priority
+                />
+              </a>
+
+              {/* TISC */}
+              <a
+                href="https://tisc.iitj.ac.in/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex"
+              >
+                <Image
+                  src="/collaborators/tisc.png"
+                  alt="TISC Logo"
+                  height={50}
+                  width={100}
+                  className="mx-auto dark:invert"
+                  priority
+                />
+              </a>
             </InfiniteSlider>
 
-            <div className="from-background absolute inset-y-0 left-0 w-20 bg-linear-to-r"></div>
-            <div className="from-background absolute inset-y-0 right-0 w-20 bg-linear-to-l"></div>
+            {/* Blurs on both sides */}
             <ProgressiveBlur
               className="pointer-events-none absolute top-0 left-0 h-full w-20"
               direction="left"
