@@ -118,16 +118,21 @@ export default function HeroSection() {
                   ...transitionVariants,
                 }}
               >
-                <div className="relative mt-8 -mr-56 overflow-hidden mask-b-from-55% px-2 sm:mt-12 sm:mr-0 md:mt-20">
-                  <div className="ring-background bg-background relative mx-auto max-w-5xl overflow-hidden rounded-2xl border p-4 shadow-lg ring-1 inset-shadow-2xs shadow-zinc-950/15 dark:inset-shadow-white/20">
-                    <video
-                      className="border-border/25 relative z-10 w-full rounded-2xl border"
-                      src="/demo-video.mp4"
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
-                    />
+                <div className="relative mt-8 px-2 sm:mt-12 md:mt-20">
+                  <div className="ring-background bg-background relative mx-auto max-w-5xl overflow-hidden rounded-2xl border p-2 shadow-lg ring-1 inset-shadow-2xs shadow-zinc-950/15 sm:p-4 dark:inset-shadow-white/20">
+                    <div
+                      className="relative w-full overflow-hidden rounded-2xl"
+                      style={{ aspectRatio: "16 / 9" }}
+                    >
+                      <video
+                        className="absolute inset-0 h-full w-full rounded-2xl object-cover sm:object-contain"
+                        src="/demo-video.mp4"
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                      />
+                    </div>
                   </div>
                 </div>
               </AnimatedGroup>
