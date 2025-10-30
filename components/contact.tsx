@@ -16,7 +16,7 @@ export default function ContactSection() {
             {
               icon: MailIcon,
               label: "Email",
-              value: "contact@21st.dev",
+              value: "b22ee022@iitj.ac.in",
             },
             {
               icon: PhoneIcon,
@@ -34,24 +34,24 @@ export default function ContactSection() {
         >
           <form action="" className="w-full space-y-4">
             <div className="flex flex-col gap-2">
-              <Label>Name</Label>
-              <Input type="text" />
+              <Label htmlFor="name">Name</Label>
+              <Input type="text" id="name" required />
             </div>
             <div className="flex flex-col gap-2">
-              <Label>Email</Label>
-              <Input type="email" />
+              <Label htmlFor="email">Email</Label>
+              <Input type="email" id="email" required />
             </div>
             <div className="flex flex-col gap-2">
-              <Label>Phone</Label>
-              <Input type="phone" />
+              <Label htmlFor="phone">Phone</Label>
+              <Input type="phone" id="phone" required />
             </div>
             <div className="flex flex-col gap-2">
-              <Label>Address</Label>
-              <Input type="text" />
+              <Label htmlFor="address">Address</Label>
+              <Input type="text" id="address" required />
             </div>
             <div className="flex flex-col gap-2">
-              <Label>Message</Label>
-              <Textarea />
+              <Label htmlFor="message">Message</Label>
+              <Textarea id="message" required />
             </div>
             <Button className="w-full" type="button">
               Submit
