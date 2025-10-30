@@ -1,9 +1,10 @@
+import ProductContent from "@/components/product-content";
 import Products from "@/components/products";
-import React from "react";
 
 const page = () => {
   return (
     <>
+      <ProductContent />
       <Products />
     </>
   );

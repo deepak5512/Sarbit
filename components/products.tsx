@@ -16,7 +16,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { BorderBeam } from "@/components/ui/border-beam";
 
-export default function Products() {
+export default function Products({ heading = false }: { heading?: boolean }) {
   type ImageKey = "item-1" | "item-2" | "item-3" | "item-4";
   const [activeItem, setActiveItem] = useState<ImageKey>("item-1");
 
@@ -43,16 +43,18 @@ export default function Products() {
     <section className="py-12 md:py-20 lg:py-32">
       <div className="absolute inset-0 -z-10 bg-linear-to-b sm:inset-6 sm:rounded-b-3xl dark:block dark:to-[color-mix(in_oklab,var(--color-zinc-900)_75%,var(--color-background))]"></div>
       <div className="mx-auto max-w-5xl space-y-8 px-6 md:space-y-16 lg:space-y-20 dark:[--color-border:color-mix(in_oklab,var(--color-white)_10%,transparent)]">
-        <div className="relative z-10 mx-auto max-w-3xl space-y-6 text-center">
-          <h2 className="text-4xl font-semibold text-balance lg:text-6xl">
-            Our Products & Services
-          </h2>
-          <p>
-            Sarbit Innovations develops nano/biosensors, SERS substrates,
-            thin-film coatings, micropatterning, and semiconductor solutions
-            like wafer dicing and wire bonding.
-          </p>
-        </div>
+        {heading && (
+          <div className="relative z-10 mx-auto max-w-3xl space-y-6 text-center">
+            <h2 className="text-4xl font-semibold text-balance lg:text-6xl">
+              Our Products & Services
+            </h2>
+            <p>
+              Sarbit Innovations develops nano/biosensors, SERS substrates,
+              thin-film coatings, micropatterning, and semiconductor solutions
+              like wafer dicing and wire bonding.
+            </p>
+          </div>
+        )}
 
         <div className="grid gap-12 sm:px-12 md:grid-cols-2 lg:gap-20 lg:px-0">
           <Accordion
