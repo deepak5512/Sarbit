@@ -6,6 +6,7 @@ import FooterSection from "@/components/footer";
 import { Github, Twitter } from "lucide-react";
 import { LogoIcon } from "@/components/logo";
 import { ThemeProvider } from "@/components/theme-provider";
+import { Toaster } from "@/components/ui/sonner";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -62,6 +63,7 @@ export default function RootLayout({
               }}
             />
           </div>
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>
