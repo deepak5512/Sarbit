@@ -12,6 +12,9 @@ const nextConfig: NextConfig = {
       {
         hostname: "i.imgur.com",
       },
+      {
+        hostname: "ix-marketing.imgix.net",
+      },
     ],
   },
 };

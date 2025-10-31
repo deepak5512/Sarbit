@@ -9,9 +9,9 @@ import { cn } from "@/lib/utils";
 import { AnimatedThemeToggler } from "./ui/animated-theme-toggler";
 
 const menuItems = [
-  { name: "Home", href: "/" },
   { name: "About Us", href: "/about" },
   { name: "Our Products", href: "/products" },
+  { name: "Gallery", href: "/gallery" },
   { name: "Contact Us", href: "/contact" },
 ];
 
