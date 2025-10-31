@@ -18,16 +18,17 @@ const Collaborators = () => {
                 href="https://www.aiims.edu/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex"
+                className="flex items-center justify-center"
               >
-                <Image
-                  src="/collaborators/aiims.png"
-                  alt="AIIMS Logo"
-                  height={40}
-                  width={60}
-                  className="mx-auto dark:invert"
-                  priority
-                />
+                <div className="relative flex h-20 w-20 items-center justify-center">
+                  <Image
+                    src="/collaborators/aiims.png"
+                    alt="AIIMS Logo"
+                    fill
+                    className="object-contain"
+                    priority
+                  />
+                </div>
               </a>
 
               {/* BIRAC */}
@@ -35,16 +36,17 @@ const Collaborators = () => {
                 href="https://www.birac.nic.in/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex"
+                className="flex items-center justify-center"
               >
-                <Image
-                  src="/collaborators/birac.png"
-                  alt="BIRAC Logo"
-                  height={36}
-                  width={80}
-                  className="mx-auto dark:invert"
-                  priority
-                />
+                <div className="relative flex h-20 w-20 items-center justify-center">
+                  <Image
+                    src="/collaborators/birac.png"
+                    alt="BIRAC Logo"
+                    fill
+                    className="object-contain"
+                    priority
+                  />
+                </div>
               </a>
 
               {/* IIT Jodhpur */}
@@ -52,16 +54,17 @@ const Collaborators = () => {
                 href="https://www.iitj.ac.in/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex"
+                className="flex items-center justify-center"
               >
-                <Image
-                  src="/collaborators/iitj.png"
-                  alt="IIT Jodhpur Logo"
-                  height={36}
-                  width={80}
-                  className="mx-auto dark:invert"
-                  priority
-                />
+                <div className="relative flex h-20 w-20 items-center justify-center">
+                  <Image
+                    src="/collaborators/iitj.png"
+                    alt="IIT Jodhpur Logo"
+                    fill
+                    className="object-contain"
+                    priority
+                  />
+                </div>
               </a>
 
               {/* JCKIF */}
@@ -69,16 +72,17 @@ const Collaborators = () => {
                 href="https://jckif.iitj.ac.in/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex"
+                className="flex items-center justify-center"
               >
-                <Image
-                  src="/collaborators/jckif.png"
-                  alt="JCKIF Logo"
-                  height={40}
-                  width={80}
-                  className="mx-auto dark:invert"
-                  priority
-                />
+                <div className="relative flex h-20 w-20 items-center justify-center">
+                  <Image
+                    src="/collaborators/jckif.png"
+                    alt="JCKIF Logo"
+                    fill
+                    className="object-contain"
+                    priority
+                  />
+                </div>
               </a>
 
               {/* MedTech */}
@@ -86,16 +90,17 @@ const Collaborators = () => {
                 href="https://medtech.iitj.ac.in/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex"
+                className="flex items-center justify-center"
               >
-                <Image
-                  src="/collaborators/medtech.png"
-                  alt="MedTech Logo"
-                  height={40}
-                  width={100}
-                  className="mx-auto dark:invert"
-                  priority
-                />
+                <div className="relative flex h-20 w-20 items-center justify-center">
+                  <Image
+                    src="/collaborators/medtech.png"
+                    alt="MedTech Logo"
+                    fill
+                    className="object-contain dark:invert"
+                    priority
+                  />
+                </div>
               </a>
 
               {/* SINE */}
@@ -103,16 +108,17 @@ const Collaborators = () => {
                 href="https://sineiitb.org/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex"
+                className="flex items-center justify-center"
               >
-                <Image
-                  src="/collaborators/sine.png"
-                  alt="Sine Logo"
-                  height={36}
-                  width={80}
-                  className="mx-auto dark:invert"
-                  priority
-                />
+                <div className="relative flex h-20 w-20 items-center justify-center">
+                  <Image
+                    src="/collaborators/sine.png"
+                    alt="Sine Logo"
+                    fill
+                    className="object-contain"
+                    priority
+                  />
+                </div>
               </a>
 
               {/* TISC */}
@@ -120,27 +126,28 @@ const Collaborators = () => {
                 href="https://tisc.iitj.ac.in/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex"
+                className="flex items-center justify-center"
               >
-                <Image
-                  src="/collaborators/tisc.png"
-                  alt="TISC Logo"
-                  height={50}
-                  width={100}
-                  className="mx-auto dark:invert"
-                  priority
-                />
+                <div className="relative flex h-20 w-20 items-center justify-center">
+                  <Image
+                    src="/collaborators/tisc.png"
+                    alt="TISC Logo"
+                    fill
+                    className="object-contain"
+                    priority
+                  />
+                </div>
               </a>
             </InfiniteSlider>
 
             {/* Blurs on both sides */}
             <ProgressiveBlur
-              className="pointer-events-none absolute top-0 left-0 h-full w-20"
+              className="pointer-events-none absolute top-0 left-0 h-full w-10"
               direction="left"
               blurIntensity={1}
             />
             <ProgressiveBlur
-              className="pointer-events-none absolute top-0 right-0 h-full w-20"
+              className="pointer-events-none absolute top-0 right-0 h-full w-10"
               direction="right"
               blurIntensity={1}
             />
