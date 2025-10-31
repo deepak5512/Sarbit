@@ -34,7 +34,7 @@ export default function Mission() {
 
             <Button
               asChild
-              variant="secondary"
+              // variant="secondary"
               size="sm"
               className="gap-1 pr-1.5"
             >
