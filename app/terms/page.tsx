@@ -1,7 +1,6 @@
 export default function TermsPage() {
   return (
-    <main className="container mx-auto max-w-4xl px-4 py-12 md:py-20">
-      {/* Page Header */}
+    <main className="container mx-auto max-w-4xl px-4 py-32">
       <div className="mb-10 border-b pb-4">
         <h1 className="text-primary text-4xl font-bold tracking-tight">
           Terms and Conditions
@@ -11,7 +10,6 @@ export default function TermsPage() {
         </p>
       </div>
 
-      {/* Main Content */}
       <div className="prose prose-lg text-foreground/90 max-w-none">
         <p className="lead">
           Welcome to Sarbit Innovations Private Limited (&quot;Sarbit

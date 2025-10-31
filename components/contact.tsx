@@ -41,7 +41,6 @@ export default function ContactSection() {
 
       if (response.ok) {
         toast.success("Message sent successfully!");
-        // Reset form
         setFormData({
           name: "",
           email: "",
@@ -61,7 +60,7 @@ export default function ContactSection() {
   };
 
   return (
-    <main className="relative flex size-full min-h-screen w-full items-center justify-center p-4">
+    <main className="relative flex size-full min-h-screen w-full items-center justify-center px-4 py-32">
       <div className="mx-auto max-w-5xl">
         <ContactCard
           title="Get in touch"
@@ -81,7 +80,7 @@ export default function ContactSection() {
               icon: MapPinIcon,
               label: "Address",
               value:
-                "Sarbit Innovations Pvt. Ltd. TISC, IIT Jodhpur, Karwar, Jodhpur,Rajasthan, 342037",
+                "Sarbit Innovations Pvt. Ltd. TISC, IIT Jodhpur, Karwar, Jodhpur, Rajasthan, 342037",
               className: "col-span-2",
             },
           ]}
@@ -110,7 +109,7 @@ export default function ContactSection() {
             <div className="flex flex-col gap-2">
               <Label htmlFor="phone">Phone</Label>
               <Input
-                type="tel" // Use "tel" for phone
+                type="tel"
                 id="phone"
                 value={formData.phone}
                 onChange={handleChange}
@@ -138,8 +137,8 @@ export default function ContactSection() {
             </div>
             <Button
               className="w-full cursor-pointer"
-              type="submit" // Change to "submit"
-              disabled={isLoading} // Disable button while loading
+              type="submit"
+              disabled={isLoading}
             >
               {isLoading ? "Submitting..." : "Submit"}
             </Button>
