@@ -14,9 +14,41 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Sarbit Innovations",
+  title: {
+    default: "Sarbit Innovations",
+    template: "%s - Sarbit Innovations",
+  },
   description:
     "A deep Tech Start up from Medical Technologies Program by IIT Jodhpur & AIIMS Jodhpur",
+  openGraph: {
+    title: "Sarbit Innovations - A Deep Tech Start Up",
+    description:
+      "A deep Tech Start up from Medical Technologies Program by IIT Jodhpur & AIIMS Jodhpur",
+    url: "https://www.sarbit.in/",
+    siteName: "Sarbit Innovations",
+    images: [
+      {
+        url: "https://www.sarbit.in/opengraph-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Sarbit Innovations - A Deep Tech Start Up",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Sarbit Innovations - A Deep Tech Start Up",
+    description:
+      "A deep Tech Start up from Medical Technologies Program by IIT Jodhpur & AIIMS Jodhpur",
+    images: ["https://www.sarbit.in/opengraph-image.png"],
+    creator: "Deepak Bhatter",
+  },
+  icons: {
+    icon: "/favicon.ico",
+  },
+  authors: [{ name: "Deepak Bhatter" }],
 };
 
 export default function RootLayout({
