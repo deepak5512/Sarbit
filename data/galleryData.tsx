@@ -12,7 +12,7 @@ export const galleryData = [
     alt: "With Global Business leader Kiran Mazumdar Shaw",
     title:
       "With Global Business leader Kiran Mazumdar Shaw at Global Bio India 2023, Delhi",
-    span: "sm:col-span-2",
+    span: "col-span-2",
   },
   {
     id: 3,
@@ -35,6 +35,6 @@ export const galleryData = [
     alt: "Showcasing Our Prototype",
     title:
       "Showcasing Our Prototype at Science & Technology, Jodhpur Cluster Fair",
-    span: "sm:col-span-2",
+    span: "col-span-2",
   },
 ];
