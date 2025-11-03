@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useRef } from "react";
 
 const data = [
   {
@@ -35,13 +38,32 @@ const data = [
 ];
 
 const Collaborators = () => {
+  const sliderRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const slider = sliderRef.current;
+    if (slider && slider.children.length === data.length) {
+      slider.innerHTML += slider.innerHTML;
+    }
+  }, []);
+
   return (
-    <section className="pt-16 pb-16 md:pb-32">
-      <div className="group relative m-auto max-w-5xl px-6">
-        <div className="mx-auto mt-12 grid max-w-2xl grid-cols-4 gap-x-12 gap-y-8 transition-all duration-500 sm:gap-x-16 sm:gap-y-14">
-          {data.map((collaborator, index) => (
-            <div key={index} className="flex">
-              {collaborator.name === "MedTech" ? (
+    <section className="overflow-hidden py-16 md:py-24">
+      <div className="mx-auto max-w-5xl px-6 text-center">
+        <h2 className="mb-10 text-4xl font-semibold text-balance md:text-5xl lg:text-5xl">
+          Our Collaborators
+        </h2>
+
+        <div className="relative w-full overflow-hidden">
+          <div
+            ref={sliderRef}
+            className="animate-marquee flex items-center gap-12"
+          >
+            {data.map((collaborator, index) => (
+              <div
+                key={index}
+                className="flex shrink-0 items-center justify-center"
+              >
                 <Link
                   href={collaborator.href}
                   target="_blank"
@@ -50,30 +72,17 @@ const Collaborators = () => {
                   <Image
                     src={collaborator.src}
                     alt={`${collaborator.name} Logo`}
-                    height={128}
-                    width={128}
-                    className="mx-auto h-16 w-fit dark:invert"
+                    height={100}
+                    width={150}
+                    className={`mx-auto h-16 w-auto object-contain ${
+                      collaborator.name === "MedTech" ? "dark:invert" : ""
+                    }`}
                     priority
                   />
                 </Link>
-              ) : (
-                <Link
-                  href={collaborator.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Image
-                    src={collaborator.src}
-                    alt={`${collaborator.name} Logo`}
-                    height={128}
-                    width={128}
-                    className="mx-auto h-16 w-fit"
-                    priority
-                  />
-                </Link>
-              )}
-            </div>
-          ))}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

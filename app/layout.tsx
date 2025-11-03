@@ -67,7 +67,7 @@ export default function RootLayout({
         >
           <HeroHeader />
           {children}
-          <div className="mx-auto max-w-5xl px-6">
+          <div className="mx-auto max-w-6xl px-6">
             <FooterSection
               logo={<LogoIcon />}
               brandName="Sarbit Innovations"
