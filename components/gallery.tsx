@@ -20,7 +20,7 @@ export default function GalleryPage() {
 
   return (
     <>
-      <section className="py-12 md:py-20 lg:py-32">
+      <section className="py-12 pt-24 md:py-20 md:pt-32 lg:py-32">
         <div className="absolute inset-0 -z-10 bg-linear-to-b sm:inset-6 sm:rounded-b-3xl dark:block dark:to-[color-mix(in_oklab,var(--color-zinc-900)_75%,var(--color-background))]"></div>
         <div className="mx-auto max-w-5xl space-y-8 px-6 md:space-y-16 lg:space-y-20 dark:[--color-border:color-mix(in_oklab,var(--color-white)_10%,transparent)]"></div>
         <div className="relative z-10 mx-auto max-w-3xl space-y-6 text-center">

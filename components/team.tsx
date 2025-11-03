@@ -45,7 +45,7 @@ const advisors = [
 
 export default function TeamSection() {
   return (
-    <section className="pt-16 md:pt-32 dark:bg-transparent">
+    <section className="pt-24 md:pt-32 dark:bg-transparent">
       <div className="mx-auto max-w-5xl gap-4 px-6 sm:grid sm:grid-cols-3">
         <div className="sm:col-span-1">
           <h2 className="text-3xl font-bold sm:text-4xl">About Us</h2>
