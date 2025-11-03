@@ -15,29 +15,11 @@ import Image from "next/image";
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { BorderBeam } from "@/components/ui/border-beam";
+import { productsData } from "@/data/productData";
 
 export default function Products({ heading = false }: { heading?: boolean }) {
   type ImageKey = "item-1" | "item-2" | "item-3" | "item-4";
   const [activeItem, setActiveItem] = useState<ImageKey>("item-1");
-
-  const images = {
-    "item-1": {
-      image: "/products/medical.png",
-      alt: "Medical Diagnostic Sensors & Systems",
-    },
-    "item-2": {
-      image: "/products/micro.jpg",
-      alt: "Micro/Nano Patterned Devices",
-    },
-    "item-3": {
-      image: "/products/metal.jpg",
-      alt: "Metals & Dielectric Coatings",
-    },
-    "item-4": {
-      image: "/products/wafer.png",
-      alt: "Wafer Dicing Services",
-    },
-  };
 
   return (
     <section className="py-12 md:py-20 lg:py-32">
@@ -63,54 +45,25 @@ export default function Products({ heading = false }: { heading?: boolean }) {
             onValueChange={(value) => setActiveItem(value as ImageKey)}
             className="w-full"
           >
-            <AccordionItem value="item-1">
-              <AccordionTrigger>
-                <div className="flex items-center gap-2 text-base">
-                  <Database className="size-4" />
-                  Medical Diagnostic Sensors & Systems
-                </div>
-              </AccordionTrigger>
-              <AccordionContent>
-                Nano Sensors & Systems for early diagnosis of various diseases.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-2">
-              <AccordionTrigger>
-                <div className="flex items-center gap-2 text-base">
-                  <Fingerprint className="size-4" />
-                  Micro/Nano Patterned Devices
-                </div>
-              </AccordionTrigger>
-              <AccordionContent>
-                Utilizing photolithography, wet-etching, and lift-off methods to
-                generate electrodes, sensors, and biosensors from patterned
-                metal films.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-3">
-              <AccordionTrigger>
-                <div className="flex items-center gap-2 text-base">
-                  <IdCard className="size-4" />
-                  Metals & Dielectric Coatings
-                </div>
-              </AccordionTrigger>
-              <AccordionContent>
-                Discover our proficiency in RF & DC Sputtering, e-beam and
-                thermal evaporation of various metals & dielectrics.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="item-4">
-              <AccordionTrigger>
-                <div className="flex items-center gap-2 text-base">
-                  <ChartBarIncreasingIcon className="size-4" />
-                  Wafer Dicing Services
-                </div>
-              </AccordionTrigger>
-              <AccordionContent>
-                Explore our expertise in the cutting and singulation of various
-                materials, including glass and silicon wafers.
-              </AccordionContent>
-            </AccordionItem>
+            {Object.entries(productsData).map(([key, item]) => (
+              <AccordionItem key={key} value={key as ImageKey}>
+                <AccordionTrigger>
+                  <div className="flex items-center gap-2 text-base">
+                    {key === "item-1" ? (
+                      <Database className="size-4" />
+                    ) : key === "item-2" ? (
+                      <Fingerprint className="size-4" />
+                    ) : key === "item-3" ? (
+                      <IdCard className="size-4" />
+                    ) : (
+                      <ChartBarIncreasingIcon className="size-4" />
+                    )}
+                    {item.title}
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent>{item.description}</AccordionContent>
+              </AccordionItem>
+            ))}
           </Accordion>
 
           <div className="bg-background relative flex overflow-hidden rounded-3xl border p-2">
@@ -126,9 +79,9 @@ export default function Products({ heading = false }: { heading?: boolean }) {
                   className="size-full overflow-hidden rounded-2xl border bg-zinc-900 shadow-md"
                 >
                   <Image
-                    src={images[activeItem].image}
+                    src={productsData[activeItem].image}
                     className="size-full object-cover object-top-left dark:mix-blend-lighten"
-                    alt={images[activeItem].alt}
+                    alt={productsData[activeItem].alt}
                     width={1207}
                     height={929}
                   />

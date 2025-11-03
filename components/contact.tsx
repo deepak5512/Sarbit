@@ -1,13 +1,13 @@
 "use client";
 
 import { ContactCard } from "@/components/ui/contact-card";
-import { MailIcon, PhoneIcon, MapPinIcon } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useState } from "react";
 import { toast } from "sonner";
+import { contactData } from "@/data/contactData";
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -65,25 +65,7 @@ export default function ContactSection() {
         <ContactCard
           title="Get in touch"
           description="If you have any questions regarding our Services or need help, please fill out the form here. We do our best to respond within 1 business day."
-          contactInfo={[
-            {
-              icon: MailIcon,
-              label: "Email",
-              value: "b22ee022@iitj.ac.in",
-            },
-            {
-              icon: PhoneIcon,
-              label: "Phone",
-              value: "+91 83069 62394",
-            },
-            {
-              icon: MapPinIcon,
-              label: "Address",
-              value:
-                "Sarbit Innovations Pvt. Ltd. TISC, IIT Jodhpur, Karwar, Jodhpur, Rajasthan, 342037",
-              className: "col-span-2",
-            },
-          ]}
+          contactInfo={contactData}
         >
           <form onSubmit={handleSubmit} className="w-full space-y-4">
             <div className="flex flex-col gap-2">

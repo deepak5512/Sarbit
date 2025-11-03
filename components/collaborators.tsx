@@ -3,46 +3,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef } from "react";
-
-const data = [
-  {
-    name: "AIIMS",
-    src: "/collaborators/aiims.png",
-    href: "https://www.aiims.edu/",
-  },
-  {
-    name: "BIRAC",
-    src: "/collaborators/birac.png",
-    href: "https://www.birac.nic.in/",
-  },
-  {
-    name: "IIT Jodhpur",
-    src: "/collaborators/iitj.png",
-    href: "https://www.iitj.ac.in/",
-  },
-  {
-    name: "JCKIF",
-    src: "/collaborators/jckif.png",
-    href: "https://jckif.iitj.ac.in/",
-  },
-  {
-    name: "MedTech",
-    src: "/collaborators/medtech.png",
-    href: "https://medtech.iitj.ac.in/",
-  },
-  {
-    name: "SINE",
-    src: "/collaborators/sine.png",
-    href: "https://sine.iitj.ac.in/",
-  },
-];
+import { collaboratorsData } from "@/data/collaboratorsData";
 
 const Collaborators = () => {
   const sliderRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const slider = sliderRef.current;
-    if (slider && slider.children.length === data.length) {
+    if (slider && slider.children.length === collaboratorsData.length) {
       slider.innerHTML += slider.innerHTML;
     }
   }, []);
@@ -55,11 +23,15 @@ const Collaborators = () => {
         </h2>
 
         <div className="relative w-full overflow-hidden">
+          {/* Gradient blur on both ends */}
+          <div className="from-background pointer-events-none absolute top-0 left-0 z-10 h-full w-24 bg-linear-to-r to-transparent" />
+          <div className="from-background pointer-events-none absolute top-0 right-0 z-10 h-full w-24 bg-linear-to-l to-transparent" />
+
           <div
             ref={sliderRef}
             className="animate-marquee flex items-center gap-12"
           >
-            {data.map((collaborator, index) => (
+            {collaboratorsData.map((collaborator, index) => (
               <div
                 key={index}
                 className="flex shrink-0 items-center justify-center"
