@@ -60,8 +60,8 @@ export default function TeamSection() {
         </div>
       </div>
 
-      <div className="mx-auto mt-12 max-w-5xl border-t px-6 md:mt-24">
-        <span className="text-caption -mt-3.5 -ml-6 block w-max px-6">
+      <div className="relative mx-auto mt-12 max-w-5xl border-t px-6 md:mt-24">
+        <span className="text-caption absolute -top-3 left-6 bg-white px-3 dark:bg-black">
           Founders
         </span>
         <div className="mt-12 gap-4 sm:grid sm:grid-cols-2 md:mt-24"></div>
@@ -102,8 +102,8 @@ export default function TeamSection() {
         </div>
       </div>
 
-      <div className="mx-auto mt-12 max-w-5xl border-t px-6 md:mt-24">
-        <span className="text-caption -mt-3.5 -ml-6 block w-max px-6">
+      <div className="relative mx-auto mt-12 max-w-5xl border-t px-6 md:mt-24">
+        <span className="text-caption absolute -top-3 left-6 bg-white px-3 dark:bg-black">
           Scientific Advisors
         </span>
         <div className="mt-12 gap-4 sm:grid sm:grid-cols-2 md:mt-24"></div>
