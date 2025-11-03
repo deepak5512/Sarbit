@@ -28,9 +28,8 @@ export default function GalleryPage() {
             Our Journey in Frames
           </h2>
           <p>
-            A collection of moments that define who we are — our achievements,
-            collaborations, and the unforgettable memories we’ve created
-            together along the way.
+            Moments that define us — our achievements, collaborations, and
+            memories.
           </p>
         </div>
 
