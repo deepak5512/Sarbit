@@ -8,7 +8,7 @@ export default function TermsPage() {
   return (
     <main className="container mx-auto max-w-4xl px-4 py-32">
       <div className="mb-10 border-b pb-4">
-        <h1 className="text-primary text-4xl font-bold tracking-tight">
+        <h1 className="text-4xl font-bold tracking-tight">
           Terms and Conditions
         </h1>
         <p className="text-muted-foreground mt-2 text-lg">
