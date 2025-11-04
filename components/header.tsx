@@ -43,7 +43,6 @@ export const HeroHeader = () => {
       >
         <div className="mx-auto max-w-5xl px-6 transition-all duration-300">
           <div className="relative flex items-center justify-between py-3 lg:py-4">
-            {/* Left: Logo */}
             <Link
               href="/"
               aria-label="home"
@@ -52,7 +51,6 @@ export const HeroHeader = () => {
               <Logo />
             </Link>
 
-            {/* Right: Theme toggle + Menu button (mobile only) */}
             <div className="flex items-center gap-2 lg:hidden">
               <AnimatedThemeToggler />
               <button
@@ -75,7 +73,6 @@ export const HeroHeader = () => {
               </button>
             </div>
 
-            {/* Desktop menu */}
             <div className="hidden lg:flex lg:items-center lg:gap-8">
               <ul className="flex gap-8 text-sm">
                 {menuItems.map((item, index) => (
@@ -93,7 +90,6 @@ export const HeroHeader = () => {
             </div>
           </div>
 
-          {/* Mobile menu dropdown */}
           {menuState && (
             <div className="bg-background mb-6 w-full flex-col space-y-8 rounded-3xl border p-6 shadow-2xl shadow-zinc-300/20 lg:hidden dark:shadow-none">
               <ul className="w-full space-y-6 text-base">

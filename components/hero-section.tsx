@@ -128,7 +128,7 @@ export default function HeroSection() {
                     >
                       <video
                         className="absolute inset-0 h-full w-full rounded-2xl object-cover sm:object-contain"
-                        src="/demo-video.mp4"
+                        src="/video.mp4"
                         autoPlay
                         muted
                         loop
