@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { HeroHeader } from "@/components/header";
 import FooterSection from "@/components/footer";
-import { Github, Twitter } from "lucide-react";
+import { Linkedin, Mail } from "lucide-react";
 import { LogoIcon } from "@/components/logo";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
@@ -73,19 +73,19 @@ export default function RootLayout({
               brandName="Sarbit Innovations"
               socialLinks={[
                 {
-                  icon: <Twitter className="h-5 w-5" />,
-                  href: "https://twitter.com",
-                  label: "Twitter",
+                  icon: <Linkedin className="h-5 w-5" />,
+                  href: "https://www.linkedin.com/company/sarbit-innovations/",
+                  label: "LinkedIn",
                 },
                 {
-                  icon: <Github className="h-5 w-5" />,
-                  href: "https://github.com",
-                  label: "GitHub",
+                  icon: <Mail className="h-5 w-5" />,
+                  href: "mailto:office@sarbit.in",
+                  label: "Email",
                 },
               ]}
               mainLinks={[
-                { href: "/products", label: "Products" },
                 { href: "/about", label: "About" },
+                { href: "/products", label: "Products" },
                 { href: "/contact", label: "Contact" },
               ]}
               legalLinks={[{ href: "/terms", label: "Terms & Conditions" }]}

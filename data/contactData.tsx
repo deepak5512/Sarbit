@@ -4,12 +4,12 @@ export const contactData = [
   {
     icon: MailIcon,
     label: "Email",
-    value: "b22ee022@iitj.ac.in",
+    value: "office@sarbit.in",
   },
   {
     icon: PhoneIcon,
     label: "Phone",
-    value: "+91 83069 62394",
+    value: "+91 88902 47963",
   },
   {
     icon: MapPinIcon,
