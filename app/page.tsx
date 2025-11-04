@@ -4,11 +4,13 @@ import Products from "@/components/products";
 import HeroSection from "@/components/hero-section";
 import { TestimonialsDemo } from "@/components/testimonials";
 import Mission from "@/components/mission";
+import StatsSection from "@/components/stats";
 
 export default function Home() {
   return (
     <>
       <HeroSection />
+      <StatsSection />
       <Mission />
       <Products heading={true} />
       <FAQsThree />
