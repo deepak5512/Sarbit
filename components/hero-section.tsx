@@ -144,7 +144,7 @@ export default function HeroSection() {
       </main>
       <Particles
         className="absolute inset-0"
-        quantity={1000}
+        quantity={500}
         ease={80}
         color="#8C8C8C"
         refresh
