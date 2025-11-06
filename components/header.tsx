@@ -1,116 +1,275 @@
 "use client";
 
-import Link from "next/link";
-import { Logo } from "@/components/logo";
-import { Menu, X } from "lucide-react";
 import React from "react";
-import { useScroll } from "motion/react";
+import Link from "next/link";
+import { createPortal } from "react-dom";
+import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
-import { AnimatedThemeToggler } from "./ui/animated-theme-toggler";
+import { Button } from "@/components/ui/button";
+import { navItems } from "@/data/navItems";
+import { MenuToggleIcon } from "@/components/ui/menu-toggle-icon";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu";
+import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
+import { Logo } from "./logo";
+import { ChevronDown } from "lucide-react";
 
-const menuItems = [
-  { name: "About Us", href: "/about" },
-  { name: "Our Products", href: "/products" },
-  { name: "Our Services", href: "/services" },
-  { name: "Gallery", href: "/gallery" },
-  { name: "Achievements", href: "/achievements" },
-  { name: "Contact Us", href: "/contact" },
-];
-
-export const HeroHeader = () => {
-  const [menuState, setMenuState] = React.useState(false);
-  const [scrolled, setScrolled] = React.useState(false);
-
-  const { scrollYProgress } = useScroll();
+export function HeroHeader() {
+  const [open, setOpen] = React.useState(false);
+  const [isScrolled, setIsScrolled] = React.useState(false);
 
   React.useEffect(() => {
-    const unsubscribe = scrollYProgress.on("change", (latest) => {
-      setScrolled(latest > 0.05);
-    });
-    return () => unsubscribe();
-  }, [scrollYProgress]);
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
-  const handleMenuItemClick = () => {
-    setMenuState(false);
-  };
+  React.useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
 
   return (
-    <header>
+    <header className="fixed z-20 w-full px-2">
       <nav
-        data-state={menuState && "active"}
         className={cn(
-          "fixed z-20 w-full border-b transition-colors duration-150",
-          scrolled && "bg-background/50 backdrop-blur-3xl"
+          "mx-auto mt-2 flex h-14 w-full max-w-6xl items-center justify-between px-6 transition-all duration-300 lg:px-12",
+          isScrolled &&
+            "bg-background/50 max-w-4xl rounded-2xl border backdrop-blur-lg lg:px-5"
         )}
       >
-        <div className="mx-auto max-w-6xl px-6 transition-all duration-300">
-          <div className="relative flex items-center justify-between py-3 lg:py-4">
-            <Link
-              href="/"
-              aria-label="home"
-              className="flex items-center space-x-2"
-            >
-              <Logo />
-            </Link>
+        {/* Logo */}
+        <Link href="/" className="flex items-center gap-2">
+          <Logo />
+        </Link>
 
-            <div className="flex items-center gap-2 lg:hidden">
-              <AnimatedThemeToggler />
-              <button
-                onClick={() => setMenuState(!menuState)}
-                aria-label={menuState ? "Close Menu" : "Open Menu"}
-                className="relative z-20 p-2"
-              >
-                <Menu
-                  className={cn(
-                    "m-auto size-6 transition-all duration-200",
-                    menuState && "scale-0 rotate-180 opacity-0"
-                  )}
-                />
-                <X
-                  className={cn(
-                    "absolute inset-0 m-auto size-6 scale-0 -rotate-180 opacity-0 transition-all duration-200",
-                    menuState && "scale-100 rotate-0 opacity-100"
-                  )}
-                />
-              </button>
-            </div>
-
-            <div className="hidden lg:flex lg:items-center lg:gap-8">
-              <ul className="flex gap-8 text-sm">
-                {menuItems.map((item, index) => (
-                  <li key={index}>
+        {/* Desktop Nav */}
+        <NavigationMenu className="hidden lg:flex">
+          <NavigationMenuList className="flex items-center gap-4">
+            {navItems.map((item) =>
+              item.dropdown ? (
+                <NavigationMenuItem key={item.name}>
+                  <NavigationMenuTrigger className="bg-transparent">
                     <Link
                       href={item.href}
-                      className="text-muted-foreground hover:text-accent-foreground block duration-150"
+                      className="hover:text-accent-foreground text-muted-foreground px-2 py-1 text-sm"
                     >
                       {item.name}
                     </Link>
-                  </li>
-                ))}
-              </ul>
-              <AnimatedThemeToggler />
-            </div>
-          </div>
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent className="bg-background rounded-md border p-2 shadow-lg">
+                    <ul className="grid w-[500px] grid-cols-2 gap-2">
+                      {item.dropdown.map((link) => (
+                        <li key={link.title}>
+                          <ListItem {...link} />
+                        </li>
+                      ))}
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+              ) : (
+                <NavigationMenuLink key={item.name} asChild>
+                  <Link
+                    href={item.href}
+                    className="hover:text-accent-foreground text-muted-foreground px-2 py-1 text-sm"
+                  >
+                    {item.name}
+                  </Link>
+                </NavigationMenuLink>
+              )
+            )}
+          </NavigationMenuList>
+        </NavigationMenu>
 
-          {menuState && (
-            <div className="bg-background mb-6 w-full flex-col space-y-8 rounded-3xl border p-6 shadow-2xl shadow-zinc-300/20 lg:hidden dark:shadow-none">
-              <ul className="w-full space-y-6 text-base">
-                {menuItems.map((item, index) => (
-                  <li key={index}>
-                    <Link
-                      href={item.href}
-                      onClick={handleMenuItemClick}
-                      className="text-muted-foreground hover:text-accent-foreground block duration-150"
-                    >
-                      {item.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
+        {/* Desktop Controls */}
+        <div className="hidden items-center gap-2 lg:flex">
+          <AnimatedThemeToggler />
+        </div>
+
+        {/* Mobile Controls */}
+        <div className="flex items-center gap-2 lg:hidden">
+          <AnimatedThemeToggler />
+          <Button
+            size="icon"
+            variant="outline"
+            onClick={() => setOpen(!open)}
+            className="lg:hidden"
+            aria-expanded={open}
+          >
+            <MenuToggleIcon open={open} className="size-5" duration={300} />
+          </Button>
         </div>
       </nav>
+
+      {/* Drawer Menu */}
+      <AnimatePresence>
+        {open && <MobileDrawer open={open} onClose={() => setOpen(false)} />}
+      </AnimatePresence>
     </header>
   );
-};
+}
+
+function MobileDrawer({
+  open,
+  onClose,
+}: {
+  open: boolean;
+  onClose: () => void;
+}) {
+  if (typeof window === "undefined") return null;
+  return createPortal(
+    <>
+      {/* Backdrop */}
+      <motion.div
+        key="drawer-backdrop"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.4 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.25 }}
+        className="fixed inset-0 z-40 bg-black"
+        onClick={onClose}
+      />
+
+      {/* Drawer Panel */}
+      <motion.aside
+        key="drawer"
+        initial={{ x: "100%" }}
+        animate={{ x: 0 }}
+        exit={{ x: "100%" }}
+        transition={{ type: "spring", stiffness: 300, damping: 30 }}
+        className="bg-background fixed top-0 right-0 z-50 flex h-full w-80 flex-col overflow-y-auto border-l px-5 py-6 shadow-lg"
+      >
+        <div className="mb-6 flex items-center justify-between">
+          <Logo />
+          <Button
+            size="icon"
+            variant="ghost"
+            onClick={onClose}
+            aria-label="Close"
+          >
+            ✕
+          </Button>
+        </div>
+
+        <nav className="flex flex-col gap-4">
+          {navItems.map((item) =>
+            item.dropdown ? (
+              <CollapsibleMenuItem
+                key={item.name}
+                item={item}
+                onClose={onClose}
+              />
+            ) : (
+              <Link
+                key={item.name}
+                href={item.href}
+                onClick={onClose}
+                className="text-muted-foreground hover:text-foreground text-base font-medium transition-colors"
+              >
+                {item.name}
+              </Link>
+            )
+          )}
+        </nav>
+      </motion.aside>
+    </>,
+    document.body
+  );
+}
+
+function CollapsibleMenuItem({
+  item,
+  onClose,
+}: {
+  item: {
+    name: string;
+    href: string;
+    dropdown: { title: string; href: string; icon: React.ElementType }[];
+  };
+  onClose: () => void;
+}) {
+  const [expanded, setExpanded] = React.useState(false);
+
+  return (
+    <div className="flex flex-col">
+      <div className="flex justify-between">
+        <Link
+          href={item.href}
+          onClick={onClose}
+          className="text-muted-foreground hover:text-foreground text-base font-medium transition-colors"
+        >
+          {item.name}
+        </Link>
+        <button
+          onClick={() => setExpanded(!expanded)}
+          className="text-foreground flex items-center justify-between text-base font-semibold"
+        >
+          <motion.div
+            animate={{ rotate: expanded ? 180 : 0 }}
+            transition={{ duration: 0.2 }}
+          >
+            <ChevronDown className="size-4" />
+          </motion.div>
+        </button>
+      </div>
+
+      <AnimatePresence initial={false}>
+        {expanded && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.25 }}
+            className="mt-2 ml-3 flex flex-col gap-2 border-l pl-3"
+          >
+            {item.dropdown.map((link) => (
+              <Link
+                key={link.title}
+                href={link.href}
+                className="text-muted-foreground hover:text-foreground flex items-center gap-2 text-sm"
+              >
+                <link.icon className="size-4 opacity-70" />
+                <span>{link.title}</span>
+              </Link>
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+}
+
+function ListItem({
+  title,
+  description,
+  icon: Icon,
+  href,
+}: {
+  title: string;
+  description: string;
+  icon: React.ElementType;
+  href: string;
+}) {
+  return (
+    <Link
+      href={href}
+      className="hover:bg-accent hover:text-accent-foreground flex items-start gap-2 rounded-md p-2"
+    >
+      <div className="bg-background/40 flex size-10 items-center justify-center rounded-md border shadow-sm">
+        <Icon className="size-5" />
+      </div>
+      <div>
+        <p className="font-medium">{title}</p>
+        <p className="text-muted-foreground text-xs">{description}</p>
+      </div>
+    </Link>
+  );
+}
