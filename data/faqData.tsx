@@ -34,7 +34,7 @@ export const faqItems: FAQItem[] = [
     icon: "award", // Changed icon
     question: "What is the origin of Sarbit Innovations?", // Changed question
     answer:
-      "Sarbit Innovations is a Deep Tech startup from the Medical Technologies Program by IIT Jodhpur & AIIMS Jodhpur.", // Changed answer
+      "Sarbit Innovations is a deep-tech startup which emerged from the Medical Technologies program, a joint initiative of AIIMS Jodhpur and IIT Jodhpur.", // Changed answer
   },
   {
     id: "item-5",

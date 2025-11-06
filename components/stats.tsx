@@ -7,21 +7,21 @@ export default function StatsSection() {
         <div className="grid gap-12 divide-y *:text-center md:grid-cols-3 md:gap-2 md:divide-x md:divide-y-0">
           <div className="space-y-4">
             <div className="text-5xl font-bold">
-              <NumberTicker value={10} />+
+              <NumberTicker value={6} />+
             </div>
-            <p>Research Grants</p>
+            <p>MoU Signed</p>
           </div>
           <div className="space-y-4">
             <div className="text-5xl font-bold">
-              <NumberTicker value={5} /> +
+              <NumberTicker value={4} />+
             </div>
-            <p>Collaborations</p>
+            <p>IPs Generated</p>
           </div>
           <div className="space-y-4">
             <div className="text-5xl font-bold">
-              <NumberTicker value={3} />
+              <NumberTicker value={1.7} /> Cr+
             </div>
-            <p>Patents Filed</p>
+            <p>Grants/Funding Raised</p>
           </div>
         </div>
       </div>

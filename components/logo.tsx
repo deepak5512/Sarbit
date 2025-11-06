@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 export const Logo = () => {
-  return <Image src="/logo.png" alt="Logo" width={60} height={45} priority />;
+  return <Image src="/logo.png" alt="Logo" width={100} height={45} priority />;
 };
 
 export const LogoIcon = () => {
