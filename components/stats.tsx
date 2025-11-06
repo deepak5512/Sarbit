@@ -19,7 +19,7 @@ export default function StatsSection() {
           </div>
           <div className="space-y-4">
             <div className="text-5xl font-bold">
-              <NumberTicker value={1.7} /> Cr+
+              <NumberTicker value={1.7} decimalPlaces={1} /> Cr+
             </div>
             <p>Grants/Funding Raised</p>
           </div>

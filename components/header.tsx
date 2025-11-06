@@ -11,7 +11,9 @@ import { AnimatedThemeToggler } from "./ui/animated-theme-toggler";
 const menuItems = [
   { name: "About Us", href: "/about" },
   { name: "Our Products", href: "/products" },
+  { name: "Our Services", href: "/services" },
   { name: "Gallery", href: "/gallery" },
+  { name: "Achievements", href: "/achievements" },
   { name: "Contact Us", href: "/contact" },
 ];
 
@@ -41,7 +43,7 @@ export const HeroHeader = () => {
           scrolled && "bg-background/50 backdrop-blur-3xl"
         )}
       >
-        <div className="mx-auto max-w-5xl px-6 transition-all duration-300">
+        <div className="mx-auto max-w-6xl px-6 transition-all duration-300">
           <div className="relative flex items-center justify-between py-3 lg:py-4">
             <Link
               href="/"
