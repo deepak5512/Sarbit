@@ -1,3 +1,8 @@
+export interface Specification {
+  label: string;
+  value: string;
+}
+
 export interface ProductData {
   slug: string;
   title: string;
@@ -5,6 +10,7 @@ export interface ProductData {
   highlights: string[];
   images: string[];
   pdfUrl: string;
+  specifications?: Specification[];
 }
 
 export const products: ProductData[] = [
@@ -25,6 +31,13 @@ export const products: ProductData[] = [
       "/products/sers-substrate/3.png",
     ],
     pdfUrl: "/pdfs/sers-substrate-specifications.pdf",
+    specifications: [
+      { label: "Material", value: "Gold/Silver coated Silicon wafer" },
+      { label: "Enhancement Factor", value: "Up to 10⁸" },
+      { label: "Substrate Size", value: "10mm × 10mm" },
+      { label: "Surface Roughness", value: "< 10 nm RMS" },
+      { label: "Detection Range", value: "10⁻⁶ to 10⁻⁹ M concentration" },
+    ],
   },
   {
     slug: "nano-sensors",
@@ -43,6 +56,12 @@ export const products: ProductData[] = [
       "/products/nano-sensors/3.png",
     ],
     pdfUrl: "/pdfs/nano-sensors-specifications.pdf",
+    specifications: [
+      { label: "Sensing Type", value: "Electrochemical / Optical" },
+      { label: "Detection Limit", value: "Sub-ppm level" },
+      { label: "Response Time", value: "< 5 seconds" },
+      { label: "Operating Temperature", value: "0°C – 60°C" },
+    ],
   },
   {
     slug: "micro-heaters",
@@ -97,5 +116,11 @@ export const products: ProductData[] = [
       "/products/micro-pcr-unit/3.png",
     ],
     pdfUrl: "/pdfs/micro-pcr-unit-specifications.pdf",
+    specifications: [
+      { label: "Temperature Range", value: "25°C – 100°C" },
+      { label: "Cycle Time", value: "< 45 minutes" },
+      { label: "Sample Volume", value: "10–20 µL" },
+      { label: "Channels", value: "4 independent microchannels" },
+    ],
   },
 ];

@@ -11,6 +11,7 @@ interface ProductShowcaseProps {
   highlights?: string[];
   images: string[];
   pdfUrl: string;
+  specifications?: { label: string; value: string }[];
 }
 
 export function ProductShowcase({
@@ -19,6 +20,7 @@ export function ProductShowcase({
   highlights = [],
   images,
   pdfUrl,
+  specifications,
 }: ProductShowcaseProps) {
   const [selectedImage, setSelectedImage] = React.useState(images[0]);
 
@@ -105,6 +107,25 @@ export function ProductShowcase({
           </div>
         </div>
       </div>
+      {specifications && specifications.length > 0 && (
+        <div className="mt-8">
+          <h3 className="mb-3 text-2xl font-semibold">Specifications</h3>
+          <div className="overflow-x-auto">
+            <table className="w-full border-collapse text-sm">
+              <tbody>
+                {specifications.map((spec, i) => (
+                  <tr key={i} className="border-border border-b">
+                    <td className="text-foreground w-1/2 py-2 pr-4 font-medium">
+                      {spec.label}
+                    </td>
+                    <td className="text-muted-foreground py-2">{spec.value}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      )}
     </main>
   );
 }

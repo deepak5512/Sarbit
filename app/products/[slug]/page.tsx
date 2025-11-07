@@ -35,7 +35,6 @@ export default async function ProductPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-
   const product = products.find((p) => p.slug === slug);
   if (!product) notFound();
 
@@ -46,6 +45,7 @@ export default async function ProductPage({
       highlights={product.highlights}
       images={product.images}
       pdfUrl={product.pdfUrl}
+      specifications={product.specifications}
     />
   );
 }

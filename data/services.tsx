@@ -1,3 +1,8 @@
+export interface Specification {
+  label: string;
+  value: string;
+}
+
 export interface ServiceData {
   slug: string;
   title: string;
@@ -5,6 +10,7 @@ export interface ServiceData {
   highlights: string[];
   images: string[];
   pdfUrl: string;
+  specifications?: Specification[];
 }
 
 export const services: ServiceData[] = [
@@ -22,9 +28,14 @@ export const services: ServiceData[] = [
     images: [
       "/services/thin-film-coating/1.png",
       "/services/thin-film-coating/2.png",
-      "/services/thin-film-coating/3.png",
     ],
     pdfUrl: "/pdfs/thin-film-coating-specifications.pdf",
+    specifications: [
+      { label: "Deposition Method", value: "Sputtering / Thermal Evaporation" },
+      { label: "Thickness Range", value: "10 nm – 5 µm" },
+      { label: "Uniformity", value: "±3%" },
+      { label: "Substrate Size", value: "Up to 6 inches" },
+    ],
   },
   {
     slug: "microfabrication",
@@ -40,7 +51,6 @@ export const services: ServiceData[] = [
     images: [
       "/services/microfabrication/1.png",
       "/services/microfabrication/2.png",
-      "/services/microfabrication/3.png",
     ],
     pdfUrl: "/pdfs/microfabrication-specifications.pdf",
   },
@@ -58,62 +68,13 @@ export const services: ServiceData[] = [
     images: [
       "/services/photolithography/1.png",
       "/services/photolithography/2.png",
-      "/services/photolithography/3.png",
     ],
     pdfUrl: "/pdfs/photolithography-specifications.pdf",
-  },
-  {
-    slug: "photomask-design",
-    title: "Photomask Design & Fabrication",
-    description:
-      "Design and fabrication of high-resolution photomasks optimized for semiconductor and MEMS applications.",
-    highlights: [
-      "Custom mask layouts for diverse applications",
-      "Sub-micron resolution patterning",
-      "Optimized optical density and edge definition",
-      "Quick turnaround and quality assurance",
+    specifications: [
+      { label: "Resolution", value: "Up to 1 µm" },
+      { label: "Alignment Accuracy", value: "±0.5 µm" },
+      { label: "Wafer Size", value: "Up to 6 inches" },
+      { label: "Photoresist Type", value: "Positive / Negative" },
     ],
-    images: [
-      "/services/photomask-design/1.png",
-      "/services/photomask-design/2.png",
-      "/services/photomask-design/3.png",
-    ],
-    pdfUrl: "/pdfs/photomask-design-specifications.pdf",
-  },
-  {
-    slug: "etching",
-    title: "Wet/Dry Etching",
-    description:
-      "Comprehensive etching services including both wet chemical and plasma-based dry etching for diverse materials.",
-    highlights: [
-      "Precise material removal with uniform depth",
-      "Support for multiple substrate materials",
-      "Plasma and reactive ion etching available",
-      "Ideal for MEMS, microfluidic, and photonic devices",
-    ],
-    images: [
-      "/services/etching/1.png",
-      "/services/etching/2.png",
-      "/services/etching/3.png",
-    ],
-    pdfUrl: "/pdfs/etching-specifications.pdf",
-  },
-  {
-    slug: "semiconductor-consultancy",
-    title: "Semiconductor Fabrication Consultancy",
-    description:
-      "Expert consultancy for planning, designing, and establishing semiconductor and microfabrication facilities.",
-    highlights: [
-      "Facility layout and equipment selection guidance",
-      "End-to-end process flow design",
-      "Cost optimization and process standardization",
-      "Ideal for startups, universities, and R&D labs",
-    ],
-    images: [
-      "/services/semiconductor-consultancy/1.png",
-      "/services/semiconductor-consultancy/2.png",
-      "/services/semiconductor-consultancy/3.png",
-    ],
-    pdfUrl: "/pdfs/semiconductor-consultancy-specifications.pdf",
   },
 ];

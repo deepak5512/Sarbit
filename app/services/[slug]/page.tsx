@@ -5,7 +5,7 @@ import { ProductShowcase } from "@/components/product-showcase";
 export const dynamicParams = true;
 
 export async function generateStaticParams() {
-  return services.map((p) => ({ slug: p.slug }));
+  return services.map((s) => ({ slug: s.slug }));
 }
 
 export async function generateMetadata({
@@ -14,38 +14,38 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const product = services.find((p) => p.slug === slug);
+  const service = services.find((s) => s.slug === slug);
 
-  if (!product) {
+  if (!service) {
     return {
-      title: "Product Not Found",
-      description: "The requested product does not exist.",
+      title: "Service Not Found",
+      description: "The requested service does not exist.",
     };
   }
 
   return {
-    title: `${product.title} | NanoTech Labs`,
-    description: product.description,
+    title: `${service.title} | NanoTech Labs`,
+    description: service.description,
   };
 }
 
-export default async function ProductPage({
+export default async function ServicePage({
   params,
 }: {
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-
-  const product = services.find((p) => p.slug === slug);
-  if (!product) notFound();
+  const service = services.find((s) => s.slug === slug);
+  if (!service) notFound();
 
   return (
     <ProductShowcase
-      title={product.title}
-      description={product.description}
-      highlights={product.highlights}
-      images={product.images}
-      pdfUrl={product.pdfUrl}
+      title={service.title}
+      description={service.description}
+      highlights={service.highlights}
+      images={service.images}
+      pdfUrl={service.pdfUrl}
+      specifications={service.specifications}
     />
   );
 }
