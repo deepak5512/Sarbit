@@ -63,7 +63,7 @@ export function ProductShowcase({
         </div>
 
         {/* 🧾 Product Details */}
-        <div className="flex flex-col justify-center">
+        <div className="flex flex-col">
           <h1 className="mb-4 text-4xl font-bold tracking-tight">{title}</h1>
 
           {description && (
