@@ -25,7 +25,7 @@ export function ProductShowcase({
   const [selectedImage, setSelectedImage] = React.useState(images[0]);
 
   return (
-    <main className="container mx-auto max-w-6xl px-6 py-12 md:py-20 lg:py-32">
+    <main className="container mx-auto max-w-6xl px-6 py-20 md:py-20 lg:py-32">
       <div className="grid gap-10 md:grid-cols-2">
         {/* 🖼️ Image Section */}
         <div className="flex flex-col">

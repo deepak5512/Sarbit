@@ -237,6 +237,7 @@ function CollapsibleMenuItem({
               <Link
                 key={link.title}
                 href={link.href}
+                onClick={onClose}
                 className="text-muted-foreground hover:text-foreground flex items-center gap-2 text-sm"
               >
                 <link.icon className="size-4 opacity-70" />
