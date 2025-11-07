@@ -89,7 +89,7 @@ export const navItems = [
         href: "/services/photomask-design",
       },
       {
-        title: "Wet / Dry Etching",
+        title: "Wet/Dry Etching",
         description:
           "Comprehensive etching services including both wet chemical and plasma-based dry etching for diverse materials.",
         icon: Droplets,
