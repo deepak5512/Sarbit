@@ -59,7 +59,7 @@ export function HeroHeader() {
               item.dropdown ? (
                 <NavigationMenuItem key={item.name}>
                   <NavigationMenuTrigger className="hover:text-accent-foreground cursor-pointer bg-transparent text-sm font-medium">
-                    {item.name}
+                    <Link href={item.href}>{item.name}</Link>
                   </NavigationMenuTrigger>
                   <NavigationMenuContent className="bg-background rounded-md border shadow-lg">
                     <ul className="grid sm:w-[400px] md:w-[500px] md:grid-cols-2 lg:w-[600px]">
