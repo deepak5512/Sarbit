@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export const Logo = () => {
   return (
-    <Image src="/logo-full.png" alt="Logo" width={70} height={45} priority />
+    <Image src="/logo-full.png" alt="Logo" width={90} height={45} priority />
   );
 };
 

@@ -72,7 +72,7 @@ export const navItems = [
         description:
           "Tailored and need-based process development for microfabrication, enabling precision manufacturing and prototyping.",
         icon: Wrench,
-        href: "/services/custom-microfabrication",
+        href: "/services/microfabrication",
       },
       {
         title: "Photolithography",
