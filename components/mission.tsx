@@ -12,24 +12,49 @@ export default function Mission() {
           </h2>
           <div className="space-y-6">
             <p>
-              At <span className="font-semibold">Sarbit Innovations</span>,
-              we’re advancing{" "}
-              <span className="font-semibold">sensor technologies</span> for{" "}
-              <span className="font-semibold">early disease diagnosis</span> and{" "}
-              <span className="font-semibold">food adulteration detection</span>
-              . Our mission is to build{" "}
-              <span className="font-semibold">innovative sensor solutions</span>{" "}
-              that provide timely and reliable health insights.
+              <span className="text-primary font-semibold">
+                Sarbit Innovations
+              </span>{" "}
+              specializes in{" "}
+              <span className="text-primary font-semibold">semiconductors</span>
+              ,{" "}
+              <span className="text-primary font-semibold">
+                advanced sensors
+              </span>
+              , and{" "}
+              <span className="text-primary font-semibold">
+                microfabrication technologies
+              </span>
+              , targeting impactful applications in{" "}
+              <span className="text-primary font-semibold">healthcare</span> and{" "}
+              <span className="text-primary font-semibold">
+                environmental monitoring
+              </span>
+              . With a commitment to developing innovative,{" "}
+              <span className="text-primary font-semibold">
+                need-driven solutions
+              </span>
+              , we empower scientists, researchers, and innovators to advance
+              the frontiers of technology and discovery.
             </p>
 
             <p>
-              Guided by our vision of a{" "}
-              <span className="font-semibold">healthier, safer world</span>, our
-              team combines scientific expertise with innovation to create tools
-              for <span className="font-semibold">disease detection</span> and{" "}
-              <span className="font-semibold">food safety assurance</span>.
-              Through research and development, we aim to protect public health
-              and ensure the integrity of the food supply chain.
+              Our mission is to translate cutting-edge microfabrication and
+              semiconductor research into{" "}
+              <span className="text-primary font-semibold">
+                real-world impact
+              </span>{" "}
+              by creating high-performing , scalable, and cost-effective sensing
+              systems . At Sarbit Innovations,{" "}
+              <span className="text-primary font-semibold">
+                translational research
+              </span>{" "}
+              is our priority as we strive to transform scientific breakthroughs{" "}
+              into{" "}
+              <span className="text-primary font-semibold">
+                practical, commercially viable technologies
+              </span>{" "}
+              that address critical global challenges.
             </p>
 
             <Button

@@ -49,7 +49,7 @@ export default function HeroSection() {
                   as="h1"
                   className="mt-8 max-w-2xl text-5xl font-medium text-balance md:text-6xl lg:mt-16"
                 >
-                  Vision 10x better sensing
+                  Innovating for Better Sensing....
                 </TextEffect>
                 <TextEffect
                   per="line"
