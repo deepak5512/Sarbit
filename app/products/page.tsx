@@ -1,4 +1,3 @@
-import ProductContent from "@/components/product-content";
 import Products from "@/components/products";
 import { Metadata } from "next";
 
@@ -9,7 +8,6 @@ export const metadata: Metadata = {
 const page = () => {
   return (
     <>
-      <ProductContent />
       <Products />
     </>
   );

@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { services } from "@/data/services";
-import { ProductShowcase } from "@/components/product-showcase";
+import { ProductShowcase } from "@/components/ui/product-showcase";
 
 export const dynamicParams = true;
 

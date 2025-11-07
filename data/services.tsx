@@ -39,7 +39,7 @@ export const services: ServiceData[] = [
   },
   {
     slug: "microfabrication",
-    title: "Microfabrication Solutions",
+    title: "Customized Need-Based Solutions for Microfabrication Processes",
     description:
       "Tailored and need-based process development for microfabrication, enabling precision manufacturing and prototyping.",
     highlights: [
@@ -53,6 +53,12 @@ export const services: ServiceData[] = [
       "/services/microfabrication/2.png",
     ],
     pdfUrl: "/pdfs/microfabrication-specifications.pdf",
+    specifications: [
+      { label: "Process Type", value: "Dry/Wet Etching, Lithography, Coating" },
+      { label: "Feature Size", value: "Down to 1 µm" },
+      { label: "Material Support", value: "Si, Glass, Polymers, Metals" },
+      { label: "Application Area", value: "MEMS, Sensors, Microfluidics" },
+    ],
   },
   {
     slug: "photolithography",
@@ -75,6 +81,82 @@ export const services: ServiceData[] = [
       { label: "Alignment Accuracy", value: "±0.5 µm" },
       { label: "Wafer Size", value: "Up to 6 inches" },
       { label: "Photoresist Type", value: "Positive / Negative" },
+    ],
+  },
+  {
+    slug: "photomask-design",
+    title: "Photomask Design & Fabrication",
+    description:
+      "Comprehensive photomask design and fabrication services for precise and reliable pattern transfer in microfabrication processes.",
+    highlights: [
+      "Custom design support for complex geometries",
+      "High-resolution mask writing up to sub-micron accuracy",
+      "Optimized for optical and electron-beam lithography",
+      "Fast turnaround and cleanroom-compatible quality",
+    ],
+    images: [
+      "/services/photomask-design/1.png",
+      "/services/photomask-design/2.png",
+    ],
+    pdfUrl: "/pdfs/photomask-design-specifications.pdf",
+    specifications: [
+      { label: "Minimum Feature Size", value: "0.5 µm" },
+      { label: "Mask Size", value: "Up to 5 inches" },
+      { label: "Material", value: "Quartz / Soda Lime Glass" },
+      { label: "Chrome Layer Thickness", value: "100 nm" },
+    ],
+  },
+  {
+    slug: "wet-dry-etching",
+    title: "Wet/Dry Etching",
+    description:
+      "High-precision wet and dry etching processes for material patterning and microstructure definition across diverse substrates.",
+    highlights: [
+      "Controlled etch depth and selectivity",
+      "Support for anisotropic and isotropic etching",
+      "Suitable for metals, oxides, and semiconductors",
+      "Cleanroom-compatible with safe chemical handling",
+    ],
+    images: [
+      "/services/wet-dry-etching/1.png",
+      "/services/wet-dry-etching/2.png",
+    ],
+    pdfUrl: "/pdfs/wet-dry-etching-specifications.pdf",
+    specifications: [
+      { label: "Etching Type", value: "Wet (HF, KOH) / Dry (RIE, ICP)" },
+      { label: "Etch Rate Control", value: "1–200 nm/min" },
+      { label: "Feature Size", value: "≥1 µm" },
+      { label: "Substrate Compatibility", value: "Si, SiO₂, Si₃N₄, Metals" },
+    ],
+  },
+  {
+    slug: "semiconductor-consultancy",
+    title:
+      "Consultancy for Establishment of Semiconductor Microfabrication Units",
+    description:
+      "Expert consultancy for setting up semiconductor and microfabrication facilities — from cleanroom planning to process integration.",
+    highlights: [
+      "Comprehensive feasibility and facility design support",
+      "Equipment selection and process workflow design",
+      "Assistance with cleanroom layout and contamination control",
+      "End-to-end guidance for academic, R&D, and industrial labs",
+    ],
+    images: [
+      "/services/semiconductor-consultancy/1.png",
+      "/services/semiconductor-consultancy/2.png",
+    ],
+    pdfUrl: "/pdfs/semiconductor-consultancy-specifications.pdf",
+    specifications: [
+      {
+        label: "Consultancy Scope",
+        value: "Feasibility, Design, Equipment, Training",
+      },
+      { label: "Facility Type", value: "Cleanroom (Class 100–10000)" },
+      {
+        label: "Industry Segments",
+        value: "Semiconductors, MEMS, Optoelectronics",
+      },
+      { label: "Support Model", value: "On-site / Remote" },
     ],
   },
 ];
