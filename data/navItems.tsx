@@ -1,15 +1,15 @@
 import {
-  Box,
   Layers,
-  Settings,
-  Camera,
-  Cpu,
-  Database,
-  BarChart,
-  Cloud,
-  Network,
-  ShieldCheck,
   Wrench,
+  Microscope,
+  Rss,
+  Flame,
+  CircuitBoard,
+  Dna,
+  Scan,
+  LayoutTemplate,
+  Droplets,
+  Building2,
 } from "lucide-react";
 
 export const navItems = [
@@ -19,80 +19,92 @@ export const navItems = [
     href: "/products",
     dropdown: [
       {
-        title: "Smart Vision System",
-        description: "AI-powered system for visual inspection and analytics.",
-        icon: Camera,
-        href: "/products/smart-vision",
-      },
-      {
-        title: "Edge AI Box",
-        description: "Compact hardware for on-device deep learning inference.",
-        icon: Box,
-        href: "/products/edge-ai-box",
-      },
-      {
-        title: "IoT Cloud Suite",
-        description: "Manage, monitor, and automate IoT devices effortlessly.",
-        icon: Cloud,
-        href: "/products/iot-cloud-suite",
-      },
-      {
-        title: "Data Processing Engine",
-        description: "High-performance backend for streaming and batch data.",
-        icon: Database,
-        href: "/products/data-engine",
-      },
-      {
-        title: "Analytics Dashboard",
+        title: "SERS Substrate",
         description:
-          "Interactive platform for data insights and visualizations.",
-        icon: BarChart,
-        href: "/products/analytics-dashboard",
+          "High-sensitivity Surface Enhanced Raman Scattering (SERS) substrates enabling precise molecular and chemical detection.",
+        icon: Microscope,
+        href: "/products/sers-substrate",
+      },
+      {
+        title: "Nano Sensors",
+        description:
+          "Advanced nanoscale sensors designed for real-time chemical, biological, and environmental monitoring applications.",
+        icon: Rss,
+        href: "/products/nano-sensors",
+      },
+      {
+        title: "Micro Heaters",
+        description:
+          "Compact and energy-efficient micro heaters providing accurate thermal control for lab-on-chip and MEMS devices.",
+        icon: Flame,
+        href: "/products/micro-heaters",
+      },
+      {
+        title: "Patterned Electrodes",
+        description:
+          "Precisely fabricated micro and nano-patterned electrodes for advanced electrochemical and biosensing systems.",
+        icon: CircuitBoard,
+        href: "/products/patterned-electrodes",
+      },
+      {
+        title: "Micro PCR Unit",
+        description:
+          "Portable and rapid microfluidic PCR unit for DNA amplification and on-site molecular diagnostics.",
+        icon: Dna,
+        href: "/products/micro-pcr-unit",
       },
     ],
   },
+
   {
     name: "Our Services",
     href: "/services",
     dropdown: [
       {
-        title: "AI Model Development",
-        description: "Custom deep learning model design and optimization.",
-        icon: Cpu,
-        href: "/services/ai-models",
-      },
-      {
-        title: "Cloud Infrastructure",
-        description: "Setup and manage scalable cloud-based solutions.",
-        icon: Network,
-        href: "/services/cloud",
-      },
-      {
-        title: "MLOps Pipeline",
-        description: "Deploy, monitor, and retrain models seamlessly.",
-        icon: Settings,
-        href: "/services/mlops",
-      },
-      {
-        title: "Computer Vision",
-        description: "Image and video analytics solutions for industries.",
+        title: "Thin Film Coating",
+        description:
+          "High-quality thin film deposition using advanced techniques for optical, electronic, and MEMS applications.",
         icon: Layers,
-        href: "/services/computer-vision",
+        href: "/services/thin-film-coating",
       },
       {
-        title: "Security & Compliance",
-        description: "Ensure end-to-end data protection and compliance.",
-        icon: ShieldCheck,
-        href: "/services/security",
-      },
-      {
-        title: "Maintenance & Support",
-        description: "Continuous technical support for deployed systems.",
+        title: "Microfabrication Solutions",
+        description:
+          "Tailored and need-based process development for microfabrication, enabling precision manufacturing and prototyping.",
         icon: Wrench,
-        href: "/services/support",
+        href: "/services/custom-microfabrication",
+      },
+      {
+        title: "Photolithography",
+        description:
+          "State-of-the-art photolithography services for defining micro and nano-scale patterns with high precision.",
+        icon: Scan,
+        href: "/services/photolithography",
+      },
+      {
+        title: "Photomask Design & Fabrication",
+        description:
+          "Design and fabrication of high-resolution photomasks optimized for semiconductor and MEMS applications.",
+        icon: LayoutTemplate,
+        href: "/services/photomask-design",
+      },
+      {
+        title: "Wet / Dry Etching",
+        description:
+          "Comprehensive etching services including both wet chemical and plasma-based dry etching for diverse materials.",
+        icon: Droplets,
+        href: "/services/etching",
+      },
+      {
+        title: "Semiconductor Fabrication Consultancy",
+        description:
+          "Expert consultancy for planning, designing, and establishing semiconductor and microfabrication facilities.",
+        icon: Building2,
+        href: "/services/semiconductor-consultancy",
       },
     ],
   },
+
   { name: "Gallery", href: "/gallery" },
   { name: "Achievements", href: "/achievements" },
   { name: "Contact Us", href: "/contact" },

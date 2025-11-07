@@ -15,6 +15,7 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
+  navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
 import { Logo } from "./logo";
@@ -47,43 +48,45 @@ export function HeroHeader() {
         )}
       >
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2">
+        <Link href="/" className="flex items-center gap-2 font-semibold">
           <Logo />
         </Link>
 
-        {/* Desktop Nav */}
+        {/* Desktop Navigation */}
         <NavigationMenu className="hidden lg:flex">
-          <NavigationMenuList className="flex items-center gap-4">
+          <NavigationMenuList className="flex-wrap">
             {navItems.map((item) =>
               item.dropdown ? (
                 <NavigationMenuItem key={item.name}>
-                  <NavigationMenuTrigger className="bg-transparent">
-                    <Link
-                      href={item.href}
-                      className="hover:text-accent-foreground text-muted-foreground px-2 py-1 text-sm"
-                    >
-                      {item.name}
-                    </Link>
+                  <NavigationMenuTrigger className="hover:text-accent-foreground cursor-pointer bg-transparent text-sm font-medium">
+                    {item.name}
                   </NavigationMenuTrigger>
-                  <NavigationMenuContent className="bg-background rounded-md border p-2 shadow-lg">
-                    <ul className="grid w-[500px] grid-cols-2 gap-2">
+                  <NavigationMenuContent className="bg-background rounded-md border shadow-lg">
+                    <ul className="grid sm:w-[400px] md:w-[500px] md:grid-cols-2 lg:w-[600px]">
                       {item.dropdown.map((link) => (
-                        <li key={link.title}>
-                          <ListItem {...link} />
-                        </li>
+                        <ListItem
+                          key={link.title}
+                          title={link.title}
+                          href={link.href}
+                        >
+                          {link.description}
+                        </ListItem>
                       ))}
                     </ul>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
               ) : (
-                <NavigationMenuLink key={item.name} asChild>
-                  <Link
-                    href={item.href}
-                    className="hover:text-accent-foreground text-muted-foreground px-2 py-1 text-sm"
+                <NavigationMenuItem key={item.name}>
+                  <NavigationMenuLink
+                    asChild
+                    className={cn(
+                      navigationMenuTriggerStyle(),
+                      "hover:text-accent-foreground bg-transparent text-sm font-medium"
+                    )}
                   >
-                    {item.name}
-                  </Link>
-                </NavigationMenuLink>
+                    <Link href={item.href}>{item.name}</Link>
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
               )
             )}
           </NavigationMenuList>
@@ -101,8 +104,8 @@ export function HeroHeader() {
             size="icon"
             variant="outline"
             onClick={() => setOpen(!open)}
-            className="lg:hidden"
             aria-expanded={open}
+            className="lg:hidden"
           >
             <MenuToggleIcon open={open} className="size-5" duration={300} />
           </Button>
@@ -249,27 +252,23 @@ function CollapsibleMenuItem({
 
 function ListItem({
   title,
-  description,
-  icon: Icon,
+  children,
   href,
-}: {
-  title: string;
-  description: string;
-  icon: React.ElementType;
-  href: string;
-}) {
+  ...props
+}: React.ComponentPropsWithoutRef<"li"> & { href: string }) {
   return (
-    <Link
-      href={href}
-      className="hover:bg-accent hover:text-accent-foreground flex items-start gap-2 rounded-md p-2"
-    >
-      <div className="bg-background/40 flex size-10 items-center justify-center rounded-md border shadow-sm">
-        <Icon className="size-5" />
-      </div>
-      <div>
-        <p className="font-medium">{title}</p>
-        <p className="text-muted-foreground text-xs">{description}</p>
-      </div>
-    </Link>
+    <li {...props}>
+      <NavigationMenuLink asChild>
+        <Link
+          href={href}
+          className="hover:bg-accent hover:text-accent-foreground rounded-md p-3 transition-colors"
+        >
+          <div className="text-sm leading-none font-medium">{title}</div>
+          <p className="text-muted-foreground mt-1 line-clamp-2 text-xs leading-snug">
+            {children}
+          </p>
+        </Link>
+      </NavigationMenuLink>
+    </li>
   );
 }
