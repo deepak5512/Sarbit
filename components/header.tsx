@@ -19,7 +19,7 @@ import {
 } from "@/components/ui/navigation-menu";
 import { AnimatedThemeToggler } from "@/components/ui/animated-theme-toggler";
 import { Logo } from "./logo";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, ArrowRight, X } from "lucide-react";
 
 export function HeroHeader() {
   const [open, setOpen] = React.useState(false);
@@ -32,7 +32,11 @@ export function HeroHeader() {
   }, []);
 
   React.useEffect(() => {
-    document.body.style.overflow = open ? "hidden" : "";
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
     return () => {
       document.body.style.overflow = "";
     };
@@ -44,7 +48,7 @@ export function HeroHeader() {
         className={cn(
           "mx-auto mt-2 flex h-14 w-full max-w-6xl items-center justify-between px-6 transition-all duration-300 lg:px-12",
           isScrolled &&
-            "bg-background/50 max-w-4xl rounded-2xl border backdrop-blur-lg lg:px-5"
+            "bg-background/80 max-w-4xl rounded-2xl border backdrop-blur-lg lg:px-5"
         )}
       >
         {/* Logo */}
@@ -102,12 +106,12 @@ export function HeroHeader() {
           <AnimatedThemeToggler />
           <Button
             size="icon"
-            variant="outline"
+            variant="ghost"
             onClick={() => setOpen(!open)}
             aria-expanded={open}
-            className="lg:hidden"
+            className="z-50 lg:hidden"
           >
-            <MenuToggleIcon open={open} className="size-5" duration={300} />
+            <MenuToggleIcon open={open} className="size-6" duration={300} />
           </Button>
         </div>
       </nav>
@@ -120,6 +124,31 @@ export function HeroHeader() {
   );
 }
 
+// --- Modified Mobile Drawer Components ---
+
+const drawerVariants = {
+  hidden: { opacity: 0, y: -20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.3,
+      ease: "easeOut",
+      staggerChildren: 0.1,
+    },
+  },
+  exit: {
+    opacity: 0,
+    y: -20,
+    transition: { duration: 0.2 },
+  },
+} as const;
+
+const itemVariants = {
+  hidden: { opacity: 0, x: -20 },
+  visible: { opacity: 1, x: 0 },
+};
+
 function MobileDrawer({
   open,
   onClose,
@@ -128,69 +157,62 @@ function MobileDrawer({
   onClose: () => void;
 }) {
   if (typeof window === "undefined") return null;
+
   return createPortal(
-    <>
-      {/* Backdrop */}
-      <motion.div
-        key="drawer-backdrop"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 0.4 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 0.25 }}
-        className="fixed inset-0 z-40 bg-black"
-        onClick={onClose}
-      />
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      exit="exit"
+      variants={drawerVariants}
+      // Changed padding: reduced top padding (pt-4) to fit close button, added bottom padding (pb-8)
+      className="bg-background/95 fixed inset-0 z-40 flex h-[100dvh] flex-col overflow-y-auto px-6 pt-4 pb-8 backdrop-blur-xl supports-[backdrop-filter]:bg-background/80"
+    >
+      {/* Header with Close Button */}
+      <div className="flex justify-end mb-6">
+        <Button 
+            variant="ghost" 
+            size="icon" 
+            onClick={onClose} 
+            className="text-muted-foreground hover:text-foreground"
+        >
+            <X className="size-8" />
+            <span className="sr-only">Close menu</span>
+        </Button>
+      </div>
 
-      {/* Drawer Panel */}
-      <motion.aside
-        key="drawer"
-        initial={{ x: "100%" }}
-        animate={{ x: 0 }}
-        exit={{ x: "100%" }}
-        transition={{ type: "spring", stiffness: 300, damping: 30 }}
-        className="bg-background fixed top-0 right-0 z-50 flex h-full w-80 flex-col overflow-y-auto border-l px-5 py-6 shadow-lg"
-      >
-        <div className="mb-6 flex items-center justify-between">
-          <Logo />
-          <Button
-            size="icon"
-            variant="ghost"
-            onClick={onClose}
-            aria-label="Close"
-          >
-            ✕
-          </Button>
-        </div>
-
-        <nav className="flex flex-col gap-4">
-          {navItems.map((item) =>
-            item.dropdown ? (
-              <CollapsibleMenuItem
-                key={item.name}
-                item={item}
-                onClose={onClose}
-              />
-            ) : (
+      {/* Scrollable Navigation Area */}
+      <div className="flex flex-1 flex-col gap-6">
+        {navItems.map((item) =>
+          item.dropdown ? (
+            <MobileDropdown
+              key={item.name}
+              item={item}
+              onClose={onClose}
+              variants={itemVariants}
+            />
+          ) : (
+            <motion.div key={item.name} variants={itemVariants}>
               <Link
-                key={item.name}
                 href={item.href}
                 onClick={onClose}
-                className="text-muted-foreground hover:text-foreground text-base font-medium transition-colors"
+                className="group flex items-center justify-between text-2xl font-medium tracking-tight"
               >
                 {item.name}
+                <ArrowRight className="text-muted-foreground size-5 -rotate-45 opacity-0 transition-all duration-300 group-hover:rotate-0 group-hover:opacity-100" />
               </Link>
-            )
-          )}
-        </nav>
-      </motion.aside>
-    </>,
+            </motion.div>
+          )
+        )}
+      </div>
+    </motion.div>,
     document.body
   );
 }
 
-function CollapsibleMenuItem({
+function MobileDropdown({
   item,
   onClose,
+  variants,
 }: {
   item: {
     name: string;
@@ -198,31 +220,26 @@ function CollapsibleMenuItem({
     dropdown: { title: string; href: string; icon: React.ElementType }[];
   };
   onClose: () => void;
+  variants: any;
 }) {
   const [expanded, setExpanded] = React.useState(false);
 
   return (
-    <div className="flex flex-col">
-      <div className="flex justify-between">
-        <Link
-          href={item.href}
-          onClick={onClose}
-          className="text-muted-foreground hover:text-foreground text-base font-medium transition-colors"
+    <motion.div variants={variants} className="flex flex-col">
+      <button
+        onClick={() => setExpanded(!expanded)}
+        className="group flex items-center justify-between text-2xl font-medium tracking-tight"
+      >
+        <span className={cn(expanded && "text-primary transition-colors")}>
+            {item.name}
+        </span>
+        <motion.div
+          animate={{ rotate: expanded ? 180 : 0 }}
+          transition={{ duration: 0.2 }}
         >
-          {item.name}
-        </Link>
-        <button
-          onClick={() => setExpanded(!expanded)}
-          className="text-foreground flex items-center justify-between text-base font-semibold"
-        >
-          <motion.div
-            animate={{ rotate: expanded ? 180 : 0 }}
-            transition={{ duration: 0.2 }}
-          >
-            <ChevronDown className="size-4" />
-          </motion.div>
-        </button>
-      </div>
+          <ChevronDown className="size-6 text-muted-foreground" />
+        </motion.div>
+      </button>
 
       <AnimatePresence initial={false}>
         {expanded && (
@@ -230,27 +247,38 @@ function CollapsibleMenuItem({
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.25 }}
-            className="mt-2 ml-3 flex flex-col gap-2 border-l pl-3"
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="overflow-hidden"
           >
-            {item.dropdown.map((link) => (
-              <Link
-                key={link.title}
-                href={link.href}
-                onClick={onClose}
-                className="text-muted-foreground hover:text-foreground flex items-center gap-2 text-sm"
-              >
-                <link.icon className="size-4 opacity-70" />
-                <span>{link.title}</span>
-              </Link>
-            ))}
+            <div className="mt-4 flex flex-col gap-2 border-l-2 pl-4 ml-1">
+              {item.dropdown.map((link, idx) => (
+                <motion.div
+                    key={link.title}
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: idx * 0.05 }}
+                >
+                    <Link
+                    href={link.href}
+                    onClick={onClose}
+                    className="text-muted-foreground hover:text-foreground hover:bg-muted/50 flex items-center gap-3 rounded-md p-2 transition-colors"
+                    >
+                    <div className="bg-background/50 flex size-8 items-center justify-center rounded-md border shadow-sm">
+                        <link.icon className="size-4" />
+                    </div>
+                    <span className="text-lg font-medium">{link.title}</span>
+                    </Link>
+                </motion.div>
+              ))}
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
+    </motion.div>
   );
 }
 
+// --- Helper for Desktop (Unchanged) ---
 function ListItem({
   title,
   children,
@@ -262,7 +290,7 @@ function ListItem({
       <NavigationMenuLink asChild>
         <Link
           href={href}
-          className="hover:bg-accent hover:text-accent-foreground rounded-md p-3 transition-colors"
+          className="hover:bg-accent hover:text-accent-foreground block rounded-md p-3 leading-none no-underline transition-colors outline-none select-none"
         >
           <div className="text-sm leading-none font-medium">{title}</div>
           <p className="text-muted-foreground mt-1 line-clamp-2 text-xs leading-snug">
