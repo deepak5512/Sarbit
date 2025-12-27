@@ -47,7 +47,8 @@ export default function HeroSection() {
                   preset="fade-in-blur"
                   speedSegment={0.3}
                   as="h1"
-                  className="mt-8 max-w-2xl text-5xl font-medium text-balance md:text-6xl lg:mt-16"
+                  className="mt-8 max-w-2xl text-5xl font-medium text-left break-normal leading-tight
+                            md:text-6xl lg:mt-16"
                 >
                   Innovating for Better Sensing....
                 </TextEffect>
