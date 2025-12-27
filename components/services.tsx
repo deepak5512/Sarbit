@@ -6,14 +6,7 @@ export default function Services() {
     <section className="mx-auto max-w-5xl px-6 py-16 md:py-32">
       <div className="mb-12">
         <h2 className="text-3xl font-semibold text-gray-700 sm:text-4xl dark:text-gray-100">
-          Accelerating innovation through
-          <br />
-          <span className="font-bold text-gray-900 dark:text-gray-50">
-            cutting-edge{" "}
-            <span className="text-gray-800 dark:text-white">
-              Microfabrication & Engineering Services
-            </span>
-          </span>
+          Our Fabrication Services
         </h2>
       </div>
 
