@@ -7,13 +7,13 @@ export default function StatsSection() {
         <div className="grid gap-12 divide-y *:text-center md:grid-cols-3 md:gap-2 md:divide-x md:divide-y-0">
           <div className="space-y-4">
             <div className="text-5xl font-bold">
-              <NumberTicker value={6} />+
+              <NumberTicker value={6} />
             </div>
             <p>MoU Signed</p>
           </div>
           <div className="space-y-4">
             <div className="text-5xl font-bold">
-              <NumberTicker value={4} />+
+              <NumberTicker value={4} />
             </div>
             <p>IPs Generated</p>
           </div>
