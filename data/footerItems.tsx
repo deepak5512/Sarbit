@@ -22,13 +22,15 @@ export const footerSections = [
     title: "Company",
     links: [
       { name: "About Us", href: "/about" },
+      { name: "Our Products", href: "/products" },
+      { name: "Our Services", href: "/services" },
       { name: "Gallery", href: "/gallery" },
       { name: "Achievements", href: "/achievements" },
       { name: "Terms & Conditions", href: "/terms" },
     ],
   },
   {
-    title: "Product",
+    title: "Products",
     links: [
       { name: "SERS Substrate", href: "/products/sers-substrate" },
       { name: "Nano Sensors", href: "/products/nano-sensors" },
