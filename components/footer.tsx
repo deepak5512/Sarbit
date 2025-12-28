@@ -12,7 +12,7 @@ export default function Footer({
     title: "Sarbit Innovations",
   },
   sections = footerSections,
-  description = "A collection of components for your startup business or side project.",
+  description = "Dedicated to pioneering advancements in nanosensor technology for early disease diagnosis.",
   socialLinks = footerSocialLinks,
   copyright = "© 2024 Sarbit Innovations. All rights reserved.",
 }: FooterProps) {
