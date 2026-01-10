@@ -29,6 +29,7 @@ export const products: ProductData[] = [
       "/products/sers-substrate/1.png",
       "/products/sers-substrate/2.png",
       "/products/sers-substrate/3.png",
+      "/products/sers-substrate/4.png",
     ],
     pdfUrl: "/pdfs/sers-substrate-specifications.pdf",
     specifications: [
@@ -78,6 +79,7 @@ export const products: ProductData[] = [
       "/products/micro-heaters/1.png",
       "/products/micro-heaters/2.png",
       "/products/micro-heaters/3.png",
+      "/products/micro-heaters/4.png",
     ],
     pdfUrl: "/pdfs/micro-heaters-specifications.pdf",
   },

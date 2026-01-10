@@ -28,6 +28,8 @@ export const services: ServiceData[] = [
     images: [
       "/services/thin-film-coating/1.png",
       "/services/thin-film-coating/2.png",
+      "/services/thin-film-coating/3.png",
+      "/services/thin-film-coating/4.png",
     ],
     pdfUrl: "/pdfs/thin-film-coating-specifications.pdf",
     specifications: [
@@ -51,6 +53,7 @@ export const services: ServiceData[] = [
     images: [
       "/services/microfabrication/1.png",
       "/services/microfabrication/2.png",
+      "/services/microfabrication/3.png",
     ],
     pdfUrl: "/pdfs/microfabrication-specifications.pdf",
     specifications: [
@@ -97,6 +100,7 @@ export const services: ServiceData[] = [
     images: [
       "/services/photomask-design/1.png",
       "/services/photomask-design/2.png",
+      "/services/photomask-design/3.png",
     ],
     pdfUrl: "/pdfs/photomask-design-specifications.pdf",
     specifications: [
@@ -107,7 +111,7 @@ export const services: ServiceData[] = [
     ],
   },
   {
-    slug: "wet-dry-etching",
+    slug: "etching",
     title: "Wet/Dry Etching",
     description:
       "High-precision wet and dry etching processes for material patterning and microstructure definition across diverse substrates.",
@@ -118,10 +122,12 @@ export const services: ServiceData[] = [
       "Cleanroom-compatible with safe chemical handling",
     ],
     images: [
-      "/services/wet-dry-etching/1.png",
-      "/services/wet-dry-etching/2.png",
+      "/services/etching/1.png",
+      "/services/etching/2.png",
+      "/services/etching/3.png",
+      "/services/etching/4.png",
     ],
-    pdfUrl: "/pdfs/wet-dry-etching-specifications.pdf",
+    pdfUrl: "/pdfs/etching-specifications.pdf",
     specifications: [
       { label: "Etching Type", value: "Wet (HF, KOH) / Dry (RIE, ICP)" },
       { label: "Etch Rate Control", value: "1–200 nm/min" },
@@ -143,7 +149,6 @@ export const services: ServiceData[] = [
     ],
     images: [
       "/services/semiconductor-consultancy/1.png",
-      "/services/semiconductor-consultancy/2.png",
     ],
     pdfUrl: "/pdfs/semiconductor-consultancy-specifications.pdf",
     specifications: [
